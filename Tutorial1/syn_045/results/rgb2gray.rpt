@@ -1,0 +1,224 @@
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : reference
+Design : rgb2gray
+Version: O-2018.06-SP5
+Date   : Mon Jan 19 11:16:18 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NangateOpenCellLibrary
+                                  1.064000      14     14.896000  
+AND2_X2            NangateOpenCellLibrary
+                                  1.330000       9     11.970000  
+AOI21_X1           NangateOpenCellLibrary
+                                  1.064000       2      2.128000  
+AOI21_X2           NangateOpenCellLibrary
+                                  1.862000       2      3.724000  
+BUF_X1             NangateOpenCellLibrary
+                                  0.798000       1      0.798000  
+CLKBUF_X1          NangateOpenCellLibrary
+                                  0.798000       4      3.192000  
+DFFR_X1            NangateOpenCellLibrary
+                                  5.320000      31    164.920005  n
+DFFR_X2            NangateOpenCellLibrary
+                                  5.852000       1      5.852000  n
+INV_X1             NangateOpenCellLibrary
+                                  0.532000      53     28.196000  
+INV_X2             NangateOpenCellLibrary
+                                  0.798000       1      0.798000  
+NAND2_X1           NangateOpenCellLibrary
+                                  0.798000      45     35.909999  
+NAND2_X2           NangateOpenCellLibrary
+                                  1.330000       1      1.330000  
+NAND3_X1           NangateOpenCellLibrary
+                                  1.064000      36     38.304000  
+NOR2_X2            NangateOpenCellLibrary
+                                  1.330000       3      3.990000  
+OAI21_X1           NangateOpenCellLibrary
+                                  1.064000       4      4.256000  
+OAI211_X1          NangateOpenCellLibrary
+                                  1.330000       8     10.640000  
+OAI222_X1          NangateOpenCellLibrary
+                                  2.128000      13     27.664000  
+OAI222_X2          NangateOpenCellLibrary
+                                  3.724000       3     11.172000  
+OR2_X1             NangateOpenCellLibrary
+                                  1.064000      23     24.472000  
+OR2_X2             NangateOpenCellLibrary
+                                  1.330000       5      6.650000  
+OR2_X4             NangateOpenCellLibrary
+                                  2.394000       2      4.788000  
+rgb2gray_DW01_add_2              76.076000       1     76.076000  h
+-----------------------------------------------------------------------------
+Total 22 references                                   481.726007
+1
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+        -transition_time
+        -capacitance
+Design : rgb2gray
+Version: O-2018.06-SP5
+Date   : Mon Jan 19 11:16:18 2026
+****************************************
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: r_int_reg[0]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: gray_reg[4]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rgb2gray           5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                           Cap     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  r_int_reg[0]/CK (DFFR_X1)                0.00      0.00       0.00 r
+  r_int_reg[0]/Q (DFFR_X1)       5.33      0.06      0.37       0.37 r
+  U106/ZN (INV_X1)               4.31      0.02      0.06       0.43 f
+  U107/ZN (AND2_X1)              4.97      0.03      0.12       0.55 f
+  U62/ZN (AOI21_X2)              1.95      0.07      0.12       0.67 r
+  U109/ZN (INV_X1)               1.77      0.02      0.04       0.72 f
+  U111/ZN (OAI211_X1)            1.88      0.08      0.08       0.80 r
+  U112/ZN (NAND3_X1)             1.80      0.04      0.08       0.88 f
+  U116/ZN (NAND3_X1)             1.88      0.04      0.07       0.95 r
+  U117/ZN (NAND3_X1)             1.76      0.03      0.07       1.02 f
+  U59/ZN (NAND2_X1)              1.88      0.03      0.06       1.08 r
+  U121/ZN (NAND3_X1)             1.76      0.03      0.06       1.15 f
+  U122/ZN (NAND2_X1)             1.98      0.03      0.06       1.21 r
+  C137/ZN (AND2_X2)              7.13      0.04      0.12       1.33 r
+  U38/ZN (INV_X2)               20.53      0.03      0.08       1.41 f
+  U86/ZN (NAND2_X1)              3.80      0.05      0.09       1.50 r
+  U25/ZN (OAI222_X1)             5.18      0.07      0.13       1.63 f
+  add_66/A[1] (rgb2gray_DW01_add_2)                  0.00       1.63 f
+  add_66/U109/ZN (NOR2_X2)       7.42      0.09      0.19       1.82 r
+  add_66/U96/ZN (OAI21_X2)       4.94      0.03      0.09       1.91 f
+  add_66/U69/ZN (AOI21_X1)       3.93      0.12      0.18       2.09 r
+  add_66/U116/ZN (OAI21_X1)      2.40      0.06      0.09       2.17 f
+  add_66/U108/ZN (XNOR2_X1)      1.33      0.03      0.15       2.33 f
+  add_66/SUM[5] (rgb2gray_DW01_add_2)                0.00       2.33 f
+  gray_reg[4]/D (DFFR_X1)                  0.03      0.01       2.34 f
+  data arrival time                                             2.34
+
+  clock CLK (rise edge)                              2.50       2.50
+  clock network delay (ideal)                        0.00       2.50
+  gray_reg[4]/CK (DFFR_X1)                           0.00       2.50 r
+  library setup time                                -0.16       2.34
+  data required time                                            2.34
+  ---------------------------------------------------------------------
+  data required time                                            2.34
+  data arrival time                                            -2.34
+  ---------------------------------------------------------------------
+  slack (MET)                                                   0.00
+
+
+  Startpoint: resetn (input port clocked by CLK)
+  Endpoint: gray_reg[5]/RN
+            (internal path endpoint)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rgb2gray           5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                           Cap     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  input external delay                               0.80       0.80 r
+  resetn (in)                   81.22      1.00      0.00       0.80 r
+  gray_reg[5]/RN (DFFR_X2)                 1.00      0.05       0.85 r
+  data arrival time                                             0.85
+
+  max_delay                                         20.00      20.00
+  output external delay                              0.00      20.00
+  data required time                                           20.00
+  ---------------------------------------------------------------------
+  data required time                                           20.00
+  data arrival time                                            -0.85
+  ---------------------------------------------------------------------
+  slack (MET)                                                  19.15
+
+
+1
+Loading db file '/CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB/NangateOpenCellLibrary_slow.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : rgb2gray
+Version: O-2018.06-SP5
+Date   : Mon Jan 19 11:16:19 2026
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB/NangateOpenCellLibrary_slow.db)
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+rgb2gray               5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =  89.3484 uW   (77%)
+  Net Switching Power  =  27.0938 uW   (23%)
+                         ---------
+Total Dynamic Power    = 116.4422 uW  (100%)
+
+Cell Leakage Power     =   7.4114 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register          69.2658            5.8721        1.7965e+03           76.9345  (  62.12%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational     20.0826           21.2216        5.6148e+03           46.9190  (  37.88%)
+--------------------------------------------------------------------------------------------------
+Total             89.3484 uW        27.0938 uW     7.4114e+03 nW       123.8535 uW
+1
