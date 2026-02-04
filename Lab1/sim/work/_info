@@ -1,0 +1,105 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/net/home/escmc51/ensc450/rgb2grayscale/sim
+T_opt
+!s110 1768848819
+V5aib@VYfROQIk0Z]dZf?g0
+Z1 04 1 1 work e a 1
+=1-c45ab1e61e40-696e7db2-75eb0-1a101b
+Z2 o-quiet -auto_acc_if_foreign -work work
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;10.7a;67
+R0
+T_opt1
+!s110 1768851239
+VBYJc@RZ[38j[e_WnG[HWR0
+R1
+=1-c45ab1e61e40-696e8727-3e804-1a33ce
+R2
+R3
+n@_opt1
+R4
+Ee
+Z5 w1768848298
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+R0
+Z8 8../vhdl/tb_rgb2gray.vhd
+Z9 F../vhdl/tb_rgb2gray.vhd
+l0
+L7
+VR<GhM[S=Pb5?lK4[oNFMR3
+!s100 TI`TBC:HP0`3Db7R<m7R>0
+Z10 OL;C;10.7a;67
+32
+Z11 !s110 1768848606
+!i10b 1
+Z12 !s108 1768848606.000000
+Z13 !s90 ../vhdl/tb_rgb2gray.vhd|
+Z14 !s107 ../vhdl/tb_rgb2gray.vhd|
+!i113 0
+Z15 tExplicit 1 CvgOpt 0
+Aa
+R6
+R7
+DEx4 work 1 e 0 22 R<GhM[S=Pb5?lK4[oNFMR3
+l21
+L10
+V>gha>z97@g2CkHekTf=Gb1
+!s100 @EQnhV6PhURf9cYX@gkWS1
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 0
+R15
+Ergb2gray
+Z16 w1768848161
+Z17 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R6
+R7
+R0
+Z18 8../vhdl/rgb2gray.vhd
+Z19 F../vhdl/rgb2gray.vhd
+l0
+L8
+V^]5VMMzAM@9Lbz_aNG@BD0
+!s100 3J1WASa6f;>Ici7DNmNNT3
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 ../vhdl/rgb2gray.vhd|
+Z21 !s107 ../vhdl/rgb2gray.vhd|
+!i113 0
+R15
+Abeh
+R17
+R6
+R7
+DEx4 work 8 rgb2gray 0 22 ^]5VMMzAM@9Lbz_aNG@BD0
+l20
+L14
+VEfTdAj=HPX59lGEm32>Ij2
+!s100 :zKYTMZFfJN`h^J[i4MR23
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 0
+R15
