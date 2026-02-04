@@ -1,8 +1,9 @@
 mod common_types;
 
-use clap::{ArgGroup, Parser};
+use clap::Parser;
 use common_types::{EnumLogicVec, LogicVal};
 use std::{
+    collections::BTreeSet,
     fs,
     io::{self, Write},
     path::{Path, PathBuf},
@@ -10,53 +11,20 @@ use std::{
 
 /// Select which test categories to generate.
 #[derive(Debug, Parser)]
-#[command(name = "gen-tests")]
-#[command(group(
-    ArgGroup::new("categories")
-        .multiple(true)
-        .required(false)
-        .args(&[
-            "add",
-            "sub",
-            "all",
-        ])
-))]
-
 pub struct Args {
-    /// Generate addition test cases (Cin=0)
-    #[arg(long)]
-    pub add: bool,
-
-    /// Generate subtraction test cases (A + ~B + 1, Cin=1)
-    #[arg(long)]
-    pub sub: bool,
-
-    /// Generate all test case categories
-    #[arg(long)]
-    pub all: bool,
-
     /// Output file path to write the generated test cases
     #[arg(long, value_name = "FILE", required = true)]
     pub output: PathBuf,
 }
 
-impl Args {
-    pub fn want_add(&self) -> bool {
-        self.all || self.add
-    }
-    pub fn want_sub(&self) -> bool {
-        self.all || self.sub
-    }
-}
-
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Hash, Eq, PartialEq, PartialOrd, Ord)]
 struct LadnerFischerIn {
     a: Option<i64>,
     b: Option<i64>,
     cin: Option<bool>,
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Hash, Eq, PartialEq, PartialOrd, Ord)]
 struct LadnerFischerOut {
     s: Option<i64>,
     cout: Option<bool>,
@@ -118,7 +86,7 @@ impl LadnerFischerIn {
     }
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Hash, Eq, PartialEq, PartialOrd, Ord)]
 struct LadnerFischerState {
     input: LadnerFischerIn,
     output: LadnerFischerOut,
@@ -163,30 +131,16 @@ impl LadnerFischerState {
 }
 
 fn main() -> io::Result<()> {
-    let Args {
-        add,
-        sub,
-        all,
-        output,
-    } = Args::parse();
+    let Args { output } = Args::parse();
 
     let i64_tests = test_i64();
 
-    // Generate addition test cases (Cin = 0)
-    let cases = i64_tests
-        .iter()
-        .filter(|_| add || all)
-        .map(|&(a, b)| LadnerFischerIn::new(a, b, false));
+    let cin_tests = [true, false];
 
-    // Generate subtraction test cases (A + ~B + 1, so Cin = 1)
-    let cases = cases.chain(
-        i64_tests
-            .iter()
-            .filter(|_| sub || all)
-            .map(|&(a, b)| LadnerFischerIn::new(a, !b, true)),
-    );
-
-    let cases = cases.map(LadnerFischerState::new);
+    let cases = itertools::iproduct!(i64_tests, cin_tests)
+        .map(|((a, b), cin)| LadnerFischerIn::new(a, b, cin))
+        .map(LadnerFischerState::new)
+        .collect();
 
     write_vhdl_package(&output, cases)?;
 
@@ -197,10 +151,7 @@ fn vhdl_entity_name(path: &Path) -> String {
     path.file_stem().unwrap().to_string_lossy().to_string()
 }
 
-fn write_vhdl_package(
-    path: &Path,
-    cases: impl IntoIterator<Item = LadnerFischerState>,
-) -> io::Result<()> {
+fn write_vhdl_package(path: &Path, cases: BTreeSet<LadnerFischerState>) -> io::Result<()> {
     let entity = vhdl_entity_name(path);
 
     let file = fs::File::create(path)?;
