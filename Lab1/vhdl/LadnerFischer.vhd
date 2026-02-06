@@ -41,9 +41,16 @@ begin
   end generate;
 
   blockGen : if N > 1 generate
-    blockgeneration : LFRecursiveGENERIC
-    map (N => Nlength) port map
-    (GenerateIn, PropagateIn, blockGenerate, blockPropagate);
+    blockgeneration : LFRecursive generic map
+    (
+      N => NLength
+    ) port map
+    (
+    Gen       => generateIn,
+    Prop      => propagateIn,
+    blockGen  => blockGenerate,
+    blockProp => blockPropagate
+    );
   end generate;
   blockGen1 : if N = 1 generate
     blockGenerate  <= GenerateIn;
