@@ -18,39 +18,6 @@ architecture sim of TestBench is
   constant StableTime   : time   := 100 ns;
   constant Separator    : string := string'(", ");
 
-  -- Helper: string to std_logic_vector
-  function string_to_slv(s : in string; width : integer)
-    return std_logic_vector is
-    variable vec : std_logic_vector(width - 1 downto 0);
-  begin
-    for i in 1 to width loop
-      case s(i) is
-        when '0'       => vec(width - i)       := '0';
-        when '1'       => vec(width - i)       := '1';
-        when '-'       => vec(width - i)       := '-';
-        when 'X' | 'x' => vec(width - i) := 'X';
-        when others    => vec(width - i)    := 'U';
-      end case;
-    end loop;
-    return vec;
-  end function;
-
-  -- Helper: string to std_logic
-  function string_to_sl(s : in string) return std_logic is
-    variable c              : character;
-    variable sl             : std_logic;
-  begin
-    c := s(1);
-    case c is
-      when '0'       => sl       := '0';
-      when '1'       => sl       := '1';
-      when '-'       => sl       := '-';
-      when 'X' | 'x' => sl := 'X';
-      when others    => sl    := 'U';
-    end case;
-    return sl;
-  end function;
-
   -- Helper: std_logic to string
   function sl_to_string(s : std_logic) return string is
     variable result         : string(1 to 1);
