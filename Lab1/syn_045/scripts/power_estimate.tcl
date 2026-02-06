@@ -21,13 +21,13 @@ set link_library  [concat $target_library $synthetic_library]
 #read_verilog -netlist ./results/fft_core.ref.v
 
 # Post Layout Netlist : Goodbye Wireload Models  ###################
-read_verilog -netlist ../syn_045/results/rgb2gray.ref.v
-current_design rgb2gray
-#read_parasitics ../BE_045/results/rgb2gray.spef 
+read_verilog -netlist ../syn_045/results/LadnerFischer.ref.v
+current_design LadnerFischer
+#read_parasitics ../BE_045/results/LadnerFischer.spef 
 #####################################################################
-#vcd2saif -input ../sim/rgb2gray.vcd -output ../sim/rgb2gray.vcd.saif -instance /e/uut
+#vcd2saif -input ../sim/LadnerFischer.vcd -output ../sim/LadnerFischer.vcd.saif -instance /e/uut
 # The analysis here can be repeated indefinitely for all VCD/SAIF files available
-set VCDFILES {../sim/rgb2gray.vcd.saif}
+set VCDFILES {../sim/LadnerFischer.vcd.saif}
 
 foreach file $VCDFILES {
     read_saif -input $file -instance e/UUT

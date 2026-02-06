@@ -2,7 +2,7 @@
 # atino@sfu.ca Dec 2018
 # Simple combinational Synthesis example
 
-set TOP rgb2gray
+set TOP LadnerFischer
 
 # -----------------------------
 # Specifying Technology Libraries Design constraints
@@ -40,7 +40,7 @@ set link_library  [concat $target_library $synthetic_library]
 # -----------------------------
 
 # Reading input VHDL File(s): This steps only parses VHDL determining syntax errors, but the Synthesis process is not performed yet
-analyze -format vhdl ../vhdl/rgb2gray.vhd
+analyze -format vhdl ../vhdl/LadnerFischer.vhd
 
 # Logic Synthesis
 elaborate $TOP 

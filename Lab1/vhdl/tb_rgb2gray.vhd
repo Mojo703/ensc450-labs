@@ -21,7 +21,7 @@ architecture A of E is
 
 begin
 
-  UUT : rgb2grayPORT
+  UUT : rgb2gray port
   map (clk, resetn, r, g, b, gray);
 
   en <= '1';

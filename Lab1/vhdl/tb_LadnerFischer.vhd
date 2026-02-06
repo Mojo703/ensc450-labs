@@ -116,16 +116,16 @@ begin
 
     variable output_line : line;
   begin
-    for i in ExecVectors'range loop
+    for i in AdderVectors'range loop
       -- Extract inputs from test vectors
-      A_test   := ExecVectors(i).a;
-      B_test   := ExecVectors(i).b;
-      Cin_test := ExecVectors(i).add_n_sub(0); -- Reuse add_n_sub as Cin
+      A_test   := AdderVectors(i).a;
+      B_test   := AdderVectors(i).b;
+      Cin_test := AdderVectors(i).cin;
 
       -- Extract expected outputs from test vectors
-      S_exp    := ExecVectors(i).y;
-      Cout_exp := ExecVectors(i).zero(0); -- Reuse zero as Cout
-      Ovfl_exp := ExecVectors(i).alt_b(0); -- Reuse alt_b as Ovfl
+      S_exp    := AdderVectors(i).s;
+      Cout_exp := AdderVectors(i).cout;
+      Ovfl_exp := AdderVectors(i).ovfl;
 
       -- Apply PreStim
       A   <= (others => 'X');

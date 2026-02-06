@@ -3,12345 +3,12345 @@ use ieee.std_logic_1164.all;
 package test_cases_64 is
   type AdderCase is record
     a, b, s : std_logic_vector(63 downto 0);
-    cin, cout, ovfl : std_logic_vector(0 downto 0);
+    cin, cout, ovfl : std_logic;
   end record;
   type AdderCaseArray is array (natural range <>) of AdderCase;
   constant AdderVectors : AdderCaseArray := (
   (
   a    => x"8000000000000000",
   b    => x"8000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000000",
-  cout => "1",
-  ovfl => "1"
+  cout => '1',
+  ovfl => '1'
 )
 , (
   a    => x"8000000000000000",
   b    => x"8000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000001",
-  cout => "1",
-  ovfl => "1"
+  cout => '1',
+  ovfl => '1'
 )
 , (
   a    => x"8000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"7FFFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "1"
+  cout => '1',
+  ovfl => '1'
 )
 , (
   a    => x"8000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"8000000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"8000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"8000000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"A000000000000000",
   b    => x"E000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"8000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"A000000000000000",
   b    => x"E000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000001",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"AAAAAAAAAAAAAAAA",
   b    => x"AAAAAAAAAAAAAAAA",
-  cin  => "0",
+  cin  => '0',
   s    => x"5555555555555554",
-  cout => "1",
-  ovfl => "1"
+  cout => '1',
+  ovfl => '1'
 )
 , (
   a    => x"AAAAAAAAAAAAAAAA",
   b    => x"AAAAAAAAAAAAAAAA",
-  cin  => "1",
+  cin  => '1',
   s    => x"5555555555555555",
-  cout => "1",
-  ovfl => "1"
+  cout => '1',
+  ovfl => '1'
 )
 , (
   a    => x"AAAAAAAAAAAAAAAA",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"AAAAAAAAAAAAAAA9",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"AAAAAAAAAAAAAAAA",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"AAAAAAAAAAAAAAAA",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"AAAAAAAAAAAAAAAA",
   b    => x"5555555555555555",
-  cin  => "0",
+  cin  => '0',
   s    => x"FFFFFFFFFFFFFFFF",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"AAAAAAAAAAAAAAAA",
   b    => x"5555555555555555",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"C000000000000000",
   b    => x"C000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"8000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"C000000000000000",
   b    => x"C000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000001",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"C000000000000000",
   b    => x"4000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"C000000000000000",
   b    => x"4000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000001",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"E000000000000000",
   b    => x"A000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"8000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"E000000000000000",
   b    => x"A000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000001",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFE",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"FFFFFFFFFFFFFFFD",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFE",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"FFFFFFFFFFFFFFFE",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"8000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"7FFFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "1"
+  cout => '1',
+  ovfl => '1'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"8000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"AAAAAAAAAAAAAAAA",
-  cin  => "0",
+  cin  => '0',
   s    => x"AAAAAAAAAAAAAAA9",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"AAAAAAAAAAAAAAAA",
-  cin  => "1",
+  cin  => '1',
   s    => x"AAAAAAAAAAAAAAAA",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"FFFFFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"FFFFFFFFFFFFFFFD",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"FFFFFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"FFFFFFFFFFFFFFFE",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"FFFFFFFFFFFFFFFE",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"FFFFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"FFFFFFFFFFFFFFFF",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000001",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000001",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000001",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000002",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000001",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000002",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000002",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000004",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000003",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000004",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000004",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000008",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000007",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000008",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000008",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000010",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000000F",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000010",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000010",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000020",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000001F",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000020",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000020",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000040",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000003F",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000040",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000040",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000080",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000007F",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000080",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000080",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000100",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000000FF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000100",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000100",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000200",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000001FF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000200",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000200",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000400",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000003FF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000400",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000400",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000800",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000007FF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000000800",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000800",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000001000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000FFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000001000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000002000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001FFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000002000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000002000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000004000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000003FFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000004000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000004000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000008000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000007FFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000008000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000008000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000010000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000FFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000010000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000010000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000020000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000001FFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000020000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000020000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000040000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000003FFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000040000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000040000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000080000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000007FFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000080000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000080000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000100000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000FFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000100000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000100000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000200000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000001FFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000200000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000200000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000400000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000003FFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000400000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000400000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000800000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000007FFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000000800000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000800000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000001000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000FFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000001000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000002000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001FFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000002000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000002000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000004000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000003FFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000004000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000004000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000008000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000007FFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000008000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000008000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000010000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000FFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000010000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000010000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000020000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000001FFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000020000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000020000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000040000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000003FFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000040000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000040000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000080000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000007FFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000080000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000080000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000100000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000FFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000100000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000100000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000200000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000001FFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000200000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000200000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000400000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000003FFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000400000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000400000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000800000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000007FFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000000800000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000800000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000001000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000FFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000001000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000002000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001FFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000002000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000002000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000004000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000003FFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000004000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000004000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000008000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000007FFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000008000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000008000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000010000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000FFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000010000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000010000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000020000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000001FFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000020000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000020000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000040000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000003FFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000040000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000040000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000080000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000007FFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000080000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000080000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000100000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000FFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000100000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000100000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000200000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00001FFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000200000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000200000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000400000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00003FFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000400000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000400000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000800000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00007FFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0000800000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000800000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0001000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000FFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0001000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0002000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001FFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0002000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0002000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0004000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0003FFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0004000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0004000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0008000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0007FFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0008000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0008000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0010000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000FFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0010000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0010000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0020000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"001FFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0020000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0020000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0040000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"003FFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0040000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0040000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0080000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"007FFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0080000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0080000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0100000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00FFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0100000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0100000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0200000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"01FFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0200000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0200000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0400000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"03FFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0400000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0400000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0800000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"07FFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"0800000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0800000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"1000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0FFFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"1000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"1000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"2000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"1FFFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"2000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"2000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"4000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"3FFFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"4000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"4000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"5555555555555555",
-  cin  => "0",
+  cin  => '0',
   s    => x"5555555555555554",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"FFFFFFFFFFFFFFFF",
   b    => x"5555555555555555",
-  cin  => "1",
+  cin  => '1',
   s    => x"5555555555555555",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"8000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"8000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"8000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"FFFFFFFFFFFFFFFF",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000001",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000001",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000002",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000002",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000002",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000002",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000003",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000004",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000004",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000004",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000005",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000008",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000008",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000008",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000009",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000010",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000010",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000010",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000011",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000020",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000020",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000020",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000021",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000040",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000040",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000040",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000041",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000080",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000080",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000080",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000081",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000100",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000100",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000100",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000101",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000200",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000200",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000200",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000201",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000400",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000400",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000400",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000401",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000800",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000800",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000000800",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000801",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000001000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000001000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000002000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000002000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000002000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000002001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000004000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000004000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000004000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000004001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000008000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000008000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000008000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000008001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000010000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000010000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000010000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000010001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000020000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000020000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000020000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000020001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000040000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000040000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000040000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000040001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000080000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000080000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000080000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000080001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000100000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000100000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000100000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000100001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000200000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000200000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000200000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000200001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000400000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000400000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000400000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000400001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000800000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000800000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000000800000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000800001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000001000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000001000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000002000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000002000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000002000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000002000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000004000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000004000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000004000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000004000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000008000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000008000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000008000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000008000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000010000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000010000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000010000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000010000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000020000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000020000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000020000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000020000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000040000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000040000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000040000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000040000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000080000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000080000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000080000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000080000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000100000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000100000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000100000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000100000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000200000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000200000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000200000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000200000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000400000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000400000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000400000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000400000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000800000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000800000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000000800000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000800000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000001000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000001000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000002000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000002000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000002000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000002000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000004000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000004000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000004000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000004000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000008000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000008000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000008000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000008000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000010000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000010000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000010000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000010000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000020000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000020000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000020000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000020000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000040000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000040000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000040000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000040000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000080000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000080000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000080000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000080000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000100000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000100000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000100000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000100000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000200000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000200000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000200000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000200000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000400000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000400000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000400000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000400000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000800000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000800000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0000800000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000800000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0001000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0001000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0002000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0002000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0002000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0002000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0004000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0004000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0004000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0004000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0008000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0008000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0008000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0008000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0010000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0010000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0010000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0010000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0020000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0020000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0020000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0020000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0040000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0040000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0040000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0040000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0080000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0080000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0080000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0080000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0100000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0100000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0100000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0100000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0200000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0200000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0200000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0200000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0400000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0400000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0400000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0400000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0800000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0800000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"0800000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0800000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"1000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"1000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"1000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"1000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"2000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"2000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"2000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"2000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"4000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"4000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000000",
   b    => x"4000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"4000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000001",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000001",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000001",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000001",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000001",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000002",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000001",
   b    => x"0000000000000001",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000002",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000001",
   b    => x"0000000000000001",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000003",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000001",
   b    => x"0000000000000003",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000004",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000001",
   b    => x"0000000000000003",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000005",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000001",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000002",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000002",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000003",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"0000000000000002",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000004",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"0000000000000002",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000005",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"0000000000000003",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000005",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"0000000000000003",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000006",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"0000000000000006",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000008",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000002",
   b    => x"0000000000000006",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000009",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000003",
   b    => x"0000000000000001",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000004",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000003",
   b    => x"0000000000000001",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000005",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000003",
   b    => x"0000000000000002",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000005",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000003",
   b    => x"0000000000000002",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000006",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000003",
   b    => x"0000000000000003",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000006",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000003",
   b    => x"0000000000000003",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000007",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000004",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000003",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000004",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000004",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000004",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000004",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000004",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000005",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000004",
   b    => x"0000000000000004",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000008",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000004",
   b    => x"0000000000000004",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000009",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000004",
   b    => x"000000000000000C",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000010",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000004",
   b    => x"000000000000000C",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000011",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000005",
   b    => x"0000000000000007",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000000C",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000005",
   b    => x"0000000000000007",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000000D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000006",
   b    => x"0000000000000002",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000008",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000006",
   b    => x"0000000000000002",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000009",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000006",
   b    => x"0000000000000006",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000000C",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000006",
   b    => x"0000000000000006",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000000D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000006",
   b    => x"0000000000000007",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000000D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000006",
   b    => x"0000000000000007",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000000E",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000007",
   b    => x"0000000000000005",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000000C",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000007",
   b    => x"0000000000000005",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000000D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000007",
   b    => x"0000000000000006",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000000D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000007",
   b    => x"0000000000000006",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000000E",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000008",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000007",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000008",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000008",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000008",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000008",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000008",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000009",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000008",
   b    => x"0000000000000008",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000010",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000008",
   b    => x"0000000000000008",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000011",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000008",
   b    => x"0000000000000018",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000020",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000008",
   b    => x"0000000000000018",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000021",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000A",
   b    => x"000000000000000E",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000018",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000A",
   b    => x"000000000000000E",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000019",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000C",
   b    => x"0000000000000004",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000010",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000C",
   b    => x"0000000000000004",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000011",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000C",
   b    => x"000000000000000C",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000018",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000C",
   b    => x"000000000000000C",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000019",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000E",
   b    => x"000000000000000A",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000018",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000E",
   b    => x"000000000000000A",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000019",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000E",
   b    => x"000000000000000F",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000001D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000E",
   b    => x"000000000000000F",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000001E",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000F",
   b    => x"000000000000000E",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000001D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000000F",
   b    => x"000000000000000E",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000001E",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000010",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000000F",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000010",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000010",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000010",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000010",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000010",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000011",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000010",
   b    => x"0000000000000010",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000020",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000010",
   b    => x"0000000000000010",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000021",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000010",
   b    => x"0000000000000030",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000040",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000010",
   b    => x"0000000000000030",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000041",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000014",
   b    => x"000000000000001C",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000030",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000014",
   b    => x"000000000000001C",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000031",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000018",
   b    => x"0000000000000008",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000020",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000018",
   b    => x"0000000000000008",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000021",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000018",
   b    => x"0000000000000018",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000030",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000018",
   b    => x"0000000000000018",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000031",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000001C",
   b    => x"0000000000000014",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000030",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000001C",
   b    => x"0000000000000014",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000031",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000001E",
   b    => x"000000000000001F",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000003D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000001E",
   b    => x"000000000000001F",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000003E",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000001F",
   b    => x"000000000000001E",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000003D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000001F",
   b    => x"000000000000001E",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000003E",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000020",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000001F",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000020",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000020",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000020",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000020",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000020",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000021",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000020",
   b    => x"0000000000000020",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000040",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000020",
   b    => x"0000000000000020",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000041",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000020",
   b    => x"0000000000000060",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000080",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000020",
   b    => x"0000000000000060",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000081",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000028",
   b    => x"0000000000000038",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000060",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000028",
   b    => x"0000000000000038",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000061",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000030",
   b    => x"0000000000000010",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000040",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000030",
   b    => x"0000000000000010",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000041",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000030",
   b    => x"0000000000000030",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000060",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000030",
   b    => x"0000000000000030",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000061",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000038",
   b    => x"0000000000000028",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000060",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000038",
   b    => x"0000000000000028",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000061",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000003E",
   b    => x"000000000000003F",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000007D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000003E",
   b    => x"000000000000003F",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000007E",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000003F",
   b    => x"000000000000003E",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000007D",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000003F",
   b    => x"000000000000003E",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000007E",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000040",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000003F",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000040",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000040",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000040",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000040",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000040",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000041",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000040",
   b    => x"0000000000000040",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000080",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000040",
   b    => x"0000000000000040",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000081",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000040",
   b    => x"00000000000000C0",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000100",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000040",
   b    => x"00000000000000C0",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000101",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000050",
   b    => x"0000000000000070",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000000C0",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000050",
   b    => x"0000000000000070",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000000C1",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000060",
   b    => x"0000000000000020",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000080",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000060",
   b    => x"0000000000000020",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000081",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000060",
   b    => x"0000000000000060",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000000C0",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000060",
   b    => x"0000000000000060",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000000C1",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000070",
   b    => x"0000000000000050",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000000C0",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000070",
   b    => x"0000000000000050",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000000C1",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000007E",
   b    => x"000000000000007F",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000000FD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000007E",
   b    => x"000000000000007F",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000000FE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000007F",
   b    => x"000000000000007E",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000000FD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000007F",
   b    => x"000000000000007E",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000000FE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000080",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000007F",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000080",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000080",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000080",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000080",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000080",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000081",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000080",
   b    => x"0000000000000080",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000100",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000080",
   b    => x"0000000000000080",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000101",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000080",
   b    => x"0000000000000180",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000200",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000080",
   b    => x"0000000000000180",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000201",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000A0",
   b    => x"00000000000000E0",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000180",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000A0",
   b    => x"00000000000000E0",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000181",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000C0",
   b    => x"0000000000000040",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000100",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000C0",
   b    => x"0000000000000040",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000101",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000C0",
   b    => x"00000000000000C0",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000180",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000C0",
   b    => x"00000000000000C0",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000181",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000E0",
   b    => x"00000000000000A0",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000180",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000E0",
   b    => x"00000000000000A0",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000181",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000FE",
   b    => x"00000000000000FF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000001FD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000FE",
   b    => x"00000000000000FF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000001FE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000FF",
   b    => x"00000000000000FE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000001FD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000000FF",
   b    => x"00000000000000FE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000001FE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000100",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000000FF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000100",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000100",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000100",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000100",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000100",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000101",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000100",
   b    => x"0000000000000100",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000200",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000100",
   b    => x"0000000000000100",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000201",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000100",
   b    => x"0000000000000300",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000400",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000100",
   b    => x"0000000000000300",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000401",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000140",
   b    => x"00000000000001C0",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000300",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000140",
   b    => x"00000000000001C0",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000301",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000180",
   b    => x"0000000000000080",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000200",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000180",
   b    => x"0000000000000080",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000201",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000180",
   b    => x"0000000000000180",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000300",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000180",
   b    => x"0000000000000180",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000301",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000001C0",
   b    => x"0000000000000140",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000300",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000001C0",
   b    => x"0000000000000140",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000301",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000001FE",
   b    => x"00000000000001FF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000003FD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000001FE",
   b    => x"00000000000001FF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000003FE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000001FF",
   b    => x"00000000000001FE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000003FD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000001FF",
   b    => x"00000000000001FE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000003FE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000200",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000001FF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000200",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000200",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000200",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000200",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000200",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000201",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000200",
   b    => x"0000000000000200",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000400",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000200",
   b    => x"0000000000000200",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000401",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000200",
   b    => x"0000000000000600",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000800",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000200",
   b    => x"0000000000000600",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000801",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000280",
   b    => x"0000000000000380",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000600",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000280",
   b    => x"0000000000000380",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000601",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000300",
   b    => x"0000000000000100",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000400",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000300",
   b    => x"0000000000000100",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000401",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000300",
   b    => x"0000000000000300",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000600",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000300",
   b    => x"0000000000000300",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000601",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000380",
   b    => x"0000000000000280",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000600",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000380",
   b    => x"0000000000000280",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000601",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000003FE",
   b    => x"00000000000003FF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000007FD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000003FE",
   b    => x"00000000000003FF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000007FE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000003FF",
   b    => x"00000000000003FE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000007FD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000003FF",
   b    => x"00000000000003FE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000007FE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000400",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000003FF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000400",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000400",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000400",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000400",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000400",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000401",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000400",
   b    => x"0000000000000400",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000800",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000400",
   b    => x"0000000000000400",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000801",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000400",
   b    => x"0000000000000C00",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000400",
   b    => x"0000000000000C00",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000500",
   b    => x"0000000000000700",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000C00",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000500",
   b    => x"0000000000000700",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000C01",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000600",
   b    => x"0000000000000200",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000800",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000600",
   b    => x"0000000000000200",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000801",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000600",
   b    => x"0000000000000600",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000C00",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000600",
   b    => x"0000000000000600",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000C01",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000700",
   b    => x"0000000000000500",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000C00",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000700",
   b    => x"0000000000000500",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000C01",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000007FE",
   b    => x"00000000000007FF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000FFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000007FE",
   b    => x"00000000000007FF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000FFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000007FF",
   b    => x"00000000000007FE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000FFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000007FF",
   b    => x"00000000000007FE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000FFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000800",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000007FF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000800",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000800",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000800",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000800",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000800",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000801",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000800",
   b    => x"0000000000000800",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000800",
   b    => x"0000000000000800",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000800",
   b    => x"0000000000001800",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000002000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000800",
   b    => x"0000000000001800",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000002001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000A00",
   b    => x"0000000000000E00",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001800",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000A00",
   b    => x"0000000000000E00",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001801",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000C00",
   b    => x"0000000000000400",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000C00",
   b    => x"0000000000000400",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000C00",
   b    => x"0000000000000C00",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001800",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000C00",
   b    => x"0000000000000C00",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001801",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000E00",
   b    => x"0000000000000A00",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001800",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000E00",
   b    => x"0000000000000A00",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001801",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000FFE",
   b    => x"0000000000000FFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001FFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000FFE",
   b    => x"0000000000000FFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001FFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000FFF",
   b    => x"0000000000000FFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001FFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000000FFF",
   b    => x"0000000000000FFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001FFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000FFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000001001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001000",
   b    => x"0000000000001000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000002000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001000",
   b    => x"0000000000001000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000002001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001000",
   b    => x"0000000000003000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000004000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001000",
   b    => x"0000000000003000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000004001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001400",
   b    => x"0000000000001C00",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000003000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001400",
   b    => x"0000000000001C00",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000003001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001800",
   b    => x"0000000000000800",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000002000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001800",
   b    => x"0000000000000800",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000002001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001800",
   b    => x"0000000000001800",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000003000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001800",
   b    => x"0000000000001800",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000003001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001C00",
   b    => x"0000000000001400",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000003000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001C00",
   b    => x"0000000000001400",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000003001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001FFE",
   b    => x"0000000000001FFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000003FFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001FFE",
   b    => x"0000000000001FFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000003FFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001FFF",
   b    => x"0000000000001FFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000003FFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000001FFF",
   b    => x"0000000000001FFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000003FFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000001FFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000002000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000002000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000002001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002000",
   b    => x"0000000000002000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000004000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002000",
   b    => x"0000000000002000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000004001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002000",
   b    => x"0000000000006000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000008000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002000",
   b    => x"0000000000006000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000008001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002800",
   b    => x"0000000000003800",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000006000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000002800",
   b    => x"0000000000003800",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000006001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003000",
   b    => x"0000000000001000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000004000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003000",
   b    => x"0000000000001000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000004001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003000",
   b    => x"0000000000003000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000006000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003000",
   b    => x"0000000000003000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000006001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003800",
   b    => x"0000000000002800",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000006000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003800",
   b    => x"0000000000002800",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000006001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003FFE",
   b    => x"0000000000003FFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000007FFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003FFE",
   b    => x"0000000000003FFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000007FFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003FFF",
   b    => x"0000000000003FFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000007FFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000003FFF",
   b    => x"0000000000003FFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000007FFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000004000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000003FFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000004000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000004000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000004000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000004000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000004000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000004001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000004000",
   b    => x"0000000000004000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000008000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000004000",
   b    => x"0000000000004000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000008001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000004000",
   b    => x"000000000000C000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000010000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000004000",
   b    => x"000000000000C000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000010001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000005000",
   b    => x"0000000000007000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000C000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000005000",
   b    => x"0000000000007000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000C001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000006000",
   b    => x"0000000000002000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000008000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000006000",
   b    => x"0000000000002000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000008001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000006000",
   b    => x"0000000000006000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000C000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000006000",
   b    => x"0000000000006000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000C001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000007000",
   b    => x"0000000000005000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000C000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000007000",
   b    => x"0000000000005000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000C001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000007FFE",
   b    => x"0000000000007FFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000FFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000007FFE",
   b    => x"0000000000007FFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000FFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000007FFF",
   b    => x"0000000000007FFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000FFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000007FFF",
   b    => x"0000000000007FFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000000FFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000008000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000007FFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000008000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000008000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000008000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000008000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000008000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000008001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000008000",
   b    => x"0000000000008000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000010000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000008000",
   b    => x"0000000000008000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000010001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000008000",
   b    => x"0000000000018000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000020000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000008000",
   b    => x"0000000000018000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000020001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000A000",
   b    => x"000000000000E000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000018000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000A000",
   b    => x"000000000000E000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000018001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000C000",
   b    => x"0000000000004000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000010000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000C000",
   b    => x"0000000000004000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000010001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000C000",
   b    => x"000000000000C000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000018000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000C000",
   b    => x"000000000000C000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000018001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000E000",
   b    => x"000000000000A000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000018000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000E000",
   b    => x"000000000000A000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000018001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000FFFE",
   b    => x"000000000000FFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000001FFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000FFFE",
   b    => x"000000000000FFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000001FFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000FFFF",
   b    => x"000000000000FFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000001FFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000000FFFF",
   b    => x"000000000000FFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000001FFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000010000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000000FFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000010000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000010000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000010000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000010000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000010000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000010001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000010000",
   b    => x"0000000000010000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000020000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000010000",
   b    => x"0000000000010000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000020001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000010000",
   b    => x"0000000000030000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000040000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000010000",
   b    => x"0000000000030000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000040001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000014000",
   b    => x"000000000001C000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000030000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000014000",
   b    => x"000000000001C000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000030001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000018000",
   b    => x"0000000000008000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000020000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000018000",
   b    => x"0000000000008000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000020001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000018000",
   b    => x"0000000000018000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000030000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000018000",
   b    => x"0000000000018000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000030001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000001C000",
   b    => x"0000000000014000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000030000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000001C000",
   b    => x"0000000000014000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000030001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000001FFFE",
   b    => x"000000000001FFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000003FFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000001FFFE",
   b    => x"000000000001FFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000003FFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000001FFFF",
   b    => x"000000000001FFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000003FFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000001FFFF",
   b    => x"000000000001FFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000003FFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000020000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000001FFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000020000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000020000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000020000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000020000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000020000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000020001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000020000",
   b    => x"0000000000020000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000040000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000020000",
   b    => x"0000000000020000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000040001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000020000",
   b    => x"0000000000060000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000080000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000020000",
   b    => x"0000000000060000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000080001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000028000",
   b    => x"0000000000038000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000060000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000028000",
   b    => x"0000000000038000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000060001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000030000",
   b    => x"0000000000010000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000040000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000030000",
   b    => x"0000000000010000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000040001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000030000",
   b    => x"0000000000030000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000060000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000030000",
   b    => x"0000000000030000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000060001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000038000",
   b    => x"0000000000028000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000060000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000038000",
   b    => x"0000000000028000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000060001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000003FFFE",
   b    => x"000000000003FFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000007FFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000003FFFE",
   b    => x"000000000003FFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000007FFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000003FFFF",
   b    => x"000000000003FFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000007FFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000003FFFF",
   b    => x"000000000003FFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000007FFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000040000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000003FFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000040000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000040000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000040000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000040000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000040000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000040001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000040000",
   b    => x"0000000000040000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000080000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000040000",
   b    => x"0000000000040000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000080001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000040000",
   b    => x"00000000000C0000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000100000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000040000",
   b    => x"00000000000C0000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000100001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000050000",
   b    => x"0000000000070000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000C0000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000050000",
   b    => x"0000000000070000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000C0001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000060000",
   b    => x"0000000000020000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000080000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000060000",
   b    => x"0000000000020000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000080001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000060000",
   b    => x"0000000000060000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000C0000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000060000",
   b    => x"0000000000060000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000C0001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000070000",
   b    => x"0000000000050000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000C0000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000070000",
   b    => x"0000000000050000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000C0001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000007FFFE",
   b    => x"000000000007FFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000FFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000007FFFE",
   b    => x"000000000007FFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000FFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000007FFFF",
   b    => x"000000000007FFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000FFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000007FFFF",
   b    => x"000000000007FFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000000FFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000080000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000007FFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000080000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000080000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000080000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000080000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000080000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000080001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000080000",
   b    => x"0000000000080000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000100000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000080000",
   b    => x"0000000000080000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000100001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000080000",
   b    => x"0000000000180000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000200000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000080000",
   b    => x"0000000000180000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000200001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000A0000",
   b    => x"00000000000E0000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000180000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000A0000",
   b    => x"00000000000E0000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000180001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000C0000",
   b    => x"0000000000040000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000100000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000C0000",
   b    => x"0000000000040000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000100001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000C0000",
   b    => x"00000000000C0000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000180000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000C0000",
   b    => x"00000000000C0000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000180001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000E0000",
   b    => x"00000000000A0000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000180000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000E0000",
   b    => x"00000000000A0000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000180001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000FFFFE",
   b    => x"00000000000FFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000001FFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000FFFFE",
   b    => x"00000000000FFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000001FFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000FFFFF",
   b    => x"00000000000FFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000001FFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000000FFFFF",
   b    => x"00000000000FFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000001FFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000100000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000000FFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000100000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000100000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000100000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000100000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000100000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000100001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000100000",
   b    => x"0000000000100000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000200000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000100000",
   b    => x"0000000000100000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000200001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000100000",
   b    => x"0000000000300000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000400000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000100000",
   b    => x"0000000000300000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000400001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000140000",
   b    => x"00000000001C0000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000300000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000140000",
   b    => x"00000000001C0000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000300001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000180000",
   b    => x"0000000000080000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000200000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000180000",
   b    => x"0000000000080000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000200001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000180000",
   b    => x"0000000000180000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000300000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000180000",
   b    => x"0000000000180000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000300001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000001C0000",
   b    => x"0000000000140000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000300000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000001C0000",
   b    => x"0000000000140000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000300001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000001FFFFE",
   b    => x"00000000001FFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000003FFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000001FFFFE",
   b    => x"00000000001FFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000003FFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000001FFFFF",
   b    => x"00000000001FFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000003FFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000001FFFFF",
   b    => x"00000000001FFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000003FFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000200000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000001FFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000200000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000200000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000200000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000200000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000200000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000200001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000200000",
   b    => x"0000000000200000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000400000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000200000",
   b    => x"0000000000200000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000400001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000200000",
   b    => x"0000000000600000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000800000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000200000",
   b    => x"0000000000600000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000800001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000280000",
   b    => x"0000000000380000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000600000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000280000",
   b    => x"0000000000380000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000600001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000300000",
   b    => x"0000000000100000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000400000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000300000",
   b    => x"0000000000100000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000400001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000300000",
   b    => x"0000000000300000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000600000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000300000",
   b    => x"0000000000300000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000600001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000380000",
   b    => x"0000000000280000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000600000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000380000",
   b    => x"0000000000280000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000600001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000003FFFFE",
   b    => x"00000000003FFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000007FFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000003FFFFE",
   b    => x"00000000003FFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000007FFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000003FFFFF",
   b    => x"00000000003FFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000007FFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000003FFFFF",
   b    => x"00000000003FFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000007FFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000400000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000003FFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000400000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000400000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000400000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000400000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000400000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000400001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000400000",
   b    => x"0000000000400000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000800000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000400000",
   b    => x"0000000000400000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000800001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000400000",
   b    => x"0000000000C00000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000400000",
   b    => x"0000000000C00000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000500000",
   b    => x"0000000000700000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000C00000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000500000",
   b    => x"0000000000700000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000C00001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000600000",
   b    => x"0000000000200000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000800000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000600000",
   b    => x"0000000000200000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000800001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000600000",
   b    => x"0000000000600000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000C00000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000600000",
   b    => x"0000000000600000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000C00001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000700000",
   b    => x"0000000000500000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000C00000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000700000",
   b    => x"0000000000500000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000C00001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000007FFFFE",
   b    => x"00000000007FFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000FFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000007FFFFE",
   b    => x"00000000007FFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000FFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000007FFFFF",
   b    => x"00000000007FFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000FFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000007FFFFF",
   b    => x"00000000007FFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000FFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000800000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000007FFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000800000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000800000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000800000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000800000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000800000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000800001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000800000",
   b    => x"0000000000800000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000800000",
   b    => x"0000000000800000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000800000",
   b    => x"0000000001800000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000002000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000800000",
   b    => x"0000000001800000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000002000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000A00000",
   b    => x"0000000000E00000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001800000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000A00000",
   b    => x"0000000000E00000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001800001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000C00000",
   b    => x"0000000000400000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000C00000",
   b    => x"0000000000400000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000C00000",
   b    => x"0000000000C00000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001800000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000C00000",
   b    => x"0000000000C00000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001800001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000E00000",
   b    => x"0000000000A00000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001800000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000E00000",
   b    => x"0000000000A00000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001800001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000FFFFFE",
   b    => x"0000000000FFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001FFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000FFFFFE",
   b    => x"0000000000FFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001FFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000FFFFFF",
   b    => x"0000000000FFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001FFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000000FFFFFF",
   b    => x"0000000000FFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001FFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000FFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000001000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001000000",
   b    => x"0000000001000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000002000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001000000",
   b    => x"0000000001000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000002000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001000000",
   b    => x"0000000003000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000004000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001000000",
   b    => x"0000000003000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000004000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001400000",
   b    => x"0000000001C00000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000003000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001400000",
   b    => x"0000000001C00000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000003000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001800000",
   b    => x"0000000000800000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000002000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001800000",
   b    => x"0000000000800000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000002000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001800000",
   b    => x"0000000001800000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000003000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001800000",
   b    => x"0000000001800000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000003000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001C00000",
   b    => x"0000000001400000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000003000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001C00000",
   b    => x"0000000001400000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000003000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001FFFFFE",
   b    => x"0000000001FFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000003FFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001FFFFFE",
   b    => x"0000000001FFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000003FFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001FFFFFF",
   b    => x"0000000001FFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000003FFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000001FFFFFF",
   b    => x"0000000001FFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000003FFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000001FFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000002000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000002000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000002000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002000000",
   b    => x"0000000002000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000004000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002000000",
   b    => x"0000000002000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000004000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002000000",
   b    => x"0000000006000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000008000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002000000",
   b    => x"0000000006000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000008000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002800000",
   b    => x"0000000003800000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000006000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000002800000",
   b    => x"0000000003800000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000006000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003000000",
   b    => x"0000000001000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000004000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003000000",
   b    => x"0000000001000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000004000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003000000",
   b    => x"0000000003000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000006000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003000000",
   b    => x"0000000003000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000006000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003800000",
   b    => x"0000000002800000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000006000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003800000",
   b    => x"0000000002800000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000006000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003FFFFFE",
   b    => x"0000000003FFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000007FFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003FFFFFE",
   b    => x"0000000003FFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000007FFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003FFFFFF",
   b    => x"0000000003FFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000007FFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000003FFFFFF",
   b    => x"0000000003FFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000007FFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000004000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000003FFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000004000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000004000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000004000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000004000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000004000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000004000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000004000000",
   b    => x"0000000004000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000008000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000004000000",
   b    => x"0000000004000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000008000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000004000000",
   b    => x"000000000C000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000010000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000004000000",
   b    => x"000000000C000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000010000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000005000000",
   b    => x"0000000007000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000C000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000005000000",
   b    => x"0000000007000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000C000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000006000000",
   b    => x"0000000002000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000008000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000006000000",
   b    => x"0000000002000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000008000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000006000000",
   b    => x"0000000006000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000C000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000006000000",
   b    => x"0000000006000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000C000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000007000000",
   b    => x"0000000005000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000C000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000007000000",
   b    => x"0000000005000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000C000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000007FFFFFE",
   b    => x"0000000007FFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000FFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000007FFFFFE",
   b    => x"0000000007FFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000FFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000007FFFFFF",
   b    => x"0000000007FFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000FFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000007FFFFFF",
   b    => x"0000000007FFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000000FFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000008000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000007FFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000008000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000008000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000008000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000008000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000008000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000008000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000008000000",
   b    => x"0000000008000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000010000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000008000000",
   b    => x"0000000008000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000010000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000008000000",
   b    => x"0000000018000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000020000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000008000000",
   b    => x"0000000018000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000020000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000A000000",
   b    => x"000000000E000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000018000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000A000000",
   b    => x"000000000E000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000018000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000C000000",
   b    => x"0000000004000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000010000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000C000000",
   b    => x"0000000004000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000010000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000C000000",
   b    => x"000000000C000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000018000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000C000000",
   b    => x"000000000C000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000018000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000E000000",
   b    => x"000000000A000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000018000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000E000000",
   b    => x"000000000A000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000018000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000FFFFFFE",
   b    => x"000000000FFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000001FFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000FFFFFFE",
   b    => x"000000000FFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000001FFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000FFFFFFF",
   b    => x"000000000FFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000001FFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000000FFFFFFF",
   b    => x"000000000FFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000001FFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000010000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000000FFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000010000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000010000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000010000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000010000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000010000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000010000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000010000000",
   b    => x"0000000010000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000020000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000010000000",
   b    => x"0000000010000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000020000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000010000000",
   b    => x"0000000030000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000040000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000010000000",
   b    => x"0000000030000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000040000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000014000000",
   b    => x"000000001C000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000030000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000014000000",
   b    => x"000000001C000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000030000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000018000000",
   b    => x"0000000008000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000020000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000018000000",
   b    => x"0000000008000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000020000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000018000000",
   b    => x"0000000018000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000030000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000018000000",
   b    => x"0000000018000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000030000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000001C000000",
   b    => x"0000000014000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000030000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000001C000000",
   b    => x"0000000014000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000030000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000001FFFFFFE",
   b    => x"000000001FFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000003FFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000001FFFFFFE",
   b    => x"000000001FFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000003FFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000001FFFFFFF",
   b    => x"000000001FFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000003FFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000001FFFFFFF",
   b    => x"000000001FFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000003FFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000020000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000001FFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000020000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000020000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000020000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000020000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000020000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000020000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000020000000",
   b    => x"0000000020000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000040000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000020000000",
   b    => x"0000000020000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000040000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000020000000",
   b    => x"0000000060000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000080000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000020000000",
   b    => x"0000000060000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000080000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000028000000",
   b    => x"0000000038000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000060000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000028000000",
   b    => x"0000000038000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000060000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000030000000",
   b    => x"0000000010000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000040000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000030000000",
   b    => x"0000000010000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000040000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000030000000",
   b    => x"0000000030000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000060000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000030000000",
   b    => x"0000000030000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000060000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000038000000",
   b    => x"0000000028000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000060000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000038000000",
   b    => x"0000000028000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000060000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000003FFFFFFE",
   b    => x"000000003FFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000007FFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000003FFFFFFE",
   b    => x"000000003FFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000007FFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000003FFFFFFF",
   b    => x"000000003FFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000007FFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000003FFFFFFF",
   b    => x"000000003FFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000007FFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000040000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000003FFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000040000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000040000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000040000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000040000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000040000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000040000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000040000000",
   b    => x"0000000040000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000080000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000040000000",
   b    => x"0000000040000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000080000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000040000000",
   b    => x"00000000C0000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000100000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000040000000",
   b    => x"00000000C0000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000100000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000050000000",
   b    => x"0000000070000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000C0000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000050000000",
   b    => x"0000000070000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000C0000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000060000000",
   b    => x"0000000020000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000080000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000060000000",
   b    => x"0000000020000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000080000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000060000000",
   b    => x"0000000060000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000C0000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000060000000",
   b    => x"0000000060000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000C0000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000070000000",
   b    => x"0000000050000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000C0000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000070000000",
   b    => x"0000000050000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000C0000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000007FFFFFFE",
   b    => x"000000007FFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000FFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000007FFFFFFE",
   b    => x"000000007FFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000FFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000007FFFFFFF",
   b    => x"000000007FFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000FFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000007FFFFFFF",
   b    => x"000000007FFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000000FFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000080000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000007FFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000080000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000080000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000080000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000080000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000080000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000080000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000080000000",
   b    => x"0000000080000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000100000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000080000000",
   b    => x"0000000080000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000100000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000080000000",
   b    => x"0000000180000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000200000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000080000000",
   b    => x"0000000180000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000200000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000A0000000",
   b    => x"00000000E0000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000180000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000A0000000",
   b    => x"00000000E0000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000180000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000C0000000",
   b    => x"0000000040000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000100000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000C0000000",
   b    => x"0000000040000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000100000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000C0000000",
   b    => x"00000000C0000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000180000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000C0000000",
   b    => x"00000000C0000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000180000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000E0000000",
   b    => x"00000000A0000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000180000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000E0000000",
   b    => x"00000000A0000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000180000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000FFFFFFFE",
   b    => x"00000000FFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000001FFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000FFFFFFFE",
   b    => x"00000000FFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000001FFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000FFFFFFFF",
   b    => x"00000000FFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000001FFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000000FFFFFFFF",
   b    => x"00000000FFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000001FFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000100000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000000FFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000100000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000100000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000100000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000100000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000100000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000100000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000100000000",
   b    => x"0000000100000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000200000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000100000000",
   b    => x"0000000100000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000200000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000100000000",
   b    => x"0000000300000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000400000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000100000000",
   b    => x"0000000300000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000400000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000140000000",
   b    => x"00000001C0000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000300000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000140000000",
   b    => x"00000001C0000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000300000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000180000000",
   b    => x"0000000080000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000200000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000180000000",
   b    => x"0000000080000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000200000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000180000000",
   b    => x"0000000180000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000300000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000180000000",
   b    => x"0000000180000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000300000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000001C0000000",
   b    => x"0000000140000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000300000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000001C0000000",
   b    => x"0000000140000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000300000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000001FFFFFFFE",
   b    => x"00000001FFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000003FFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000001FFFFFFFE",
   b    => x"00000001FFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000003FFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000001FFFFFFFF",
   b    => x"00000001FFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000003FFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000001FFFFFFFF",
   b    => x"00000001FFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000003FFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000200000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000001FFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000200000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000200000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000200000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000200000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000200000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000200000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000200000000",
   b    => x"0000000200000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000400000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000200000000",
   b    => x"0000000200000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000400000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000200000000",
   b    => x"0000000600000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000800000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000200000000",
   b    => x"0000000600000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000800000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000280000000",
   b    => x"0000000380000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000600000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000280000000",
   b    => x"0000000380000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000600000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000300000000",
   b    => x"0000000100000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000400000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000300000000",
   b    => x"0000000100000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000400000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000300000000",
   b    => x"0000000300000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000600000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000300000000",
   b    => x"0000000300000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000600000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000380000000",
   b    => x"0000000280000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000600000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000380000000",
   b    => x"0000000280000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000600000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000003FFFFFFFE",
   b    => x"00000003FFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000007FFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000003FFFFFFFE",
   b    => x"00000003FFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000007FFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000003FFFFFFFF",
   b    => x"00000003FFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000007FFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000003FFFFFFFF",
   b    => x"00000003FFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000007FFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000400000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000003FFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000400000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000400000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000400000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000400000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000400000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000400000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000400000000",
   b    => x"0000000400000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000800000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000400000000",
   b    => x"0000000400000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000800000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000400000000",
   b    => x"0000000C00000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000400000000",
   b    => x"0000000C00000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000500000000",
   b    => x"0000000700000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000C00000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000500000000",
   b    => x"0000000700000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000C00000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000600000000",
   b    => x"0000000200000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000800000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000600000000",
   b    => x"0000000200000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000800000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000600000000",
   b    => x"0000000600000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000C00000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000600000000",
   b    => x"0000000600000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000C00000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000700000000",
   b    => x"0000000500000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000C00000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000700000000",
   b    => x"0000000500000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000C00000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000007FFFFFFFE",
   b    => x"00000007FFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000FFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000007FFFFFFFE",
   b    => x"00000007FFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000FFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000007FFFFFFFF",
   b    => x"00000007FFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000FFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000007FFFFFFFF",
   b    => x"00000007FFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000FFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000800000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000007FFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000800000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000800000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000000800000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000800000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000800000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000800000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000800000000",
   b    => x"0000000800000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000800000000",
   b    => x"0000000800000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000800000000",
   b    => x"0000001800000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000002000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000800000000",
   b    => x"0000001800000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000002000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000A00000000",
   b    => x"0000000E00000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001800000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000A00000000",
   b    => x"0000000E00000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001800000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000C00000000",
   b    => x"0000000400000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000C00000000",
   b    => x"0000000400000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000C00000000",
   b    => x"0000000C00000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001800000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000C00000000",
   b    => x"0000000C00000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001800000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000E00000000",
   b    => x"0000000A00000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001800000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000E00000000",
   b    => x"0000000A00000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001800000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000FFFFFFFFE",
   b    => x"0000000FFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001FFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000FFFFFFFFE",
   b    => x"0000000FFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001FFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000FFFFFFFFF",
   b    => x"0000000FFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001FFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000000FFFFFFFFF",
   b    => x"0000000FFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001FFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000FFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000001000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000001000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000001000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001000000000",
   b    => x"0000001000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000002000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001000000000",
   b    => x"0000001000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000002000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001000000000",
   b    => x"0000003000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000004000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001000000000",
   b    => x"0000003000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000004000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001400000000",
   b    => x"0000001C00000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000003000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001400000000",
   b    => x"0000001C00000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000003000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001800000000",
   b    => x"0000000800000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000002000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001800000000",
   b    => x"0000000800000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000002000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001800000000",
   b    => x"0000001800000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000003000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001800000000",
   b    => x"0000001800000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000003000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001C00000000",
   b    => x"0000001400000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000003000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001C00000000",
   b    => x"0000001400000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000003000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001FFFFFFFFE",
   b    => x"0000001FFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000003FFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001FFFFFFFFE",
   b    => x"0000001FFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000003FFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001FFFFFFFFF",
   b    => x"0000001FFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000003FFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000001FFFFFFFFF",
   b    => x"0000001FFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000003FFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000002000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000001FFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000002000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000002000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000002000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000002000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000002000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000002000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000002000000000",
   b    => x"0000002000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000004000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000002000000000",
   b    => x"0000002000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000004000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000002000000000",
   b    => x"0000006000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000008000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000002000000000",
   b    => x"0000006000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000008000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000002800000000",
   b    => x"0000003800000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000006000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000002800000000",
   b    => x"0000003800000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000006000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003000000000",
   b    => x"0000001000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000004000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003000000000",
   b    => x"0000001000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000004000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003000000000",
   b    => x"0000003000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000006000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003000000000",
   b    => x"0000003000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000006000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003800000000",
   b    => x"0000002800000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000006000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003800000000",
   b    => x"0000002800000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000006000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003FFFFFFFFE",
   b    => x"0000003FFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000007FFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003FFFFFFFFE",
   b    => x"0000003FFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000007FFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003FFFFFFFFF",
   b    => x"0000003FFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000007FFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000003FFFFFFFFF",
   b    => x"0000003FFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000007FFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000004000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000003FFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000004000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000004000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000004000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000004000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000004000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000004000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000004000000000",
   b    => x"0000004000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000008000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000004000000000",
   b    => x"0000004000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000008000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000004000000000",
   b    => x"000000C000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000010000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000004000000000",
   b    => x"000000C000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000010000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000005000000000",
   b    => x"0000007000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000C000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000005000000000",
   b    => x"0000007000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000C000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000006000000000",
   b    => x"0000002000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000008000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000006000000000",
   b    => x"0000002000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000008000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000006000000000",
   b    => x"0000006000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000C000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000006000000000",
   b    => x"0000006000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000C000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000007000000000",
   b    => x"0000005000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000C000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000007000000000",
   b    => x"0000005000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000C000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000007FFFFFFFFE",
   b    => x"0000007FFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000FFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000007FFFFFFFFE",
   b    => x"0000007FFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000FFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000007FFFFFFFFF",
   b    => x"0000007FFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000FFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000007FFFFFFFFF",
   b    => x"0000007FFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000000FFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000008000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000007FFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000008000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000008000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000008000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000008000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000008000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000008000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000008000000000",
   b    => x"0000008000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000010000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000008000000000",
   b    => x"0000008000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000010000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000008000000000",
   b    => x"0000018000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000020000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000008000000000",
   b    => x"0000018000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000020000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000A000000000",
   b    => x"000000E000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000018000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000A000000000",
   b    => x"000000E000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000018000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000C000000000",
   b    => x"0000004000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000010000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000C000000000",
   b    => x"0000004000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000010000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000C000000000",
   b    => x"000000C000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000018000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000C000000000",
   b    => x"000000C000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000018000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000E000000000",
   b    => x"000000A000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000018000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000E000000000",
   b    => x"000000A000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000018000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000FFFFFFFFFE",
   b    => x"000000FFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000001FFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000FFFFFFFFFE",
   b    => x"000000FFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000001FFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000FFFFFFFFFF",
   b    => x"000000FFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000001FFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000000FFFFFFFFFF",
   b    => x"000000FFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000001FFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000010000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000000FFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000010000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000010000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000010000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000010000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000010000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000010000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000010000000000",
   b    => x"0000010000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000020000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000010000000000",
   b    => x"0000010000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000020000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000010000000000",
   b    => x"0000030000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000040000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000010000000000",
   b    => x"0000030000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000040000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000014000000000",
   b    => x"000001C000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000030000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000014000000000",
   b    => x"000001C000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000030000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000018000000000",
   b    => x"0000008000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000020000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000018000000000",
   b    => x"0000008000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000020000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000018000000000",
   b    => x"0000018000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000030000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000018000000000",
   b    => x"0000018000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000030000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000001C000000000",
   b    => x"0000014000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000030000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000001C000000000",
   b    => x"0000014000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000030000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000001FFFFFFFFFE",
   b    => x"000001FFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000003FFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000001FFFFFFFFFE",
   b    => x"000001FFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000003FFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000001FFFFFFFFFF",
   b    => x"000001FFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000003FFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000001FFFFFFFFFF",
   b    => x"000001FFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000003FFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000020000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000001FFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000020000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000020000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000020000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000020000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000020000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000020000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000020000000000",
   b    => x"0000020000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000040000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000020000000000",
   b    => x"0000020000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000040000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000020000000000",
   b    => x"0000060000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000080000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000020000000000",
   b    => x"0000060000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000080000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000028000000000",
   b    => x"0000038000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000060000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000028000000000",
   b    => x"0000038000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000060000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000030000000000",
   b    => x"0000010000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000040000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000030000000000",
   b    => x"0000010000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000040000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000030000000000",
   b    => x"0000030000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000060000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000030000000000",
   b    => x"0000030000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000060000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000038000000000",
   b    => x"0000028000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000060000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000038000000000",
   b    => x"0000028000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000060000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000003FFFFFFFFFE",
   b    => x"000003FFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000007FFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000003FFFFFFFFFE",
   b    => x"000003FFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000007FFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000003FFFFFFFFFF",
   b    => x"000003FFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000007FFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000003FFFFFFFFFF",
   b    => x"000003FFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000007FFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000040000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000003FFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000040000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000040000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000040000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000040000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000040000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000040000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000040000000000",
   b    => x"0000040000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000080000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000040000000000",
   b    => x"0000040000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000080000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000040000000000",
   b    => x"00000C0000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000100000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000040000000000",
   b    => x"00000C0000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000100000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000050000000000",
   b    => x"0000070000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000C0000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000050000000000",
   b    => x"0000070000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000C0000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000060000000000",
   b    => x"0000020000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000080000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000060000000000",
   b    => x"0000020000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000080000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000060000000000",
   b    => x"0000060000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000C0000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000060000000000",
   b    => x"0000060000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000C0000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000070000000000",
   b    => x"0000050000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000C0000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000070000000000",
   b    => x"0000050000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000C0000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000007FFFFFFFFFE",
   b    => x"000007FFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000FFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000007FFFFFFFFFE",
   b    => x"000007FFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000FFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000007FFFFFFFFFF",
   b    => x"000007FFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000FFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000007FFFFFFFFFF",
   b    => x"000007FFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00000FFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000080000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000007FFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000080000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000080000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000080000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000080000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000080000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000080000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000080000000000",
   b    => x"0000080000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000100000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000080000000000",
   b    => x"0000080000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000100000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000080000000000",
   b    => x"0000180000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000200000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000080000000000",
   b    => x"0000180000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000200000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000A0000000000",
   b    => x"00000E0000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000180000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000A0000000000",
   b    => x"00000E0000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000180000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000C0000000000",
   b    => x"0000040000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000100000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000C0000000000",
   b    => x"0000040000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000100000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000C0000000000",
   b    => x"00000C0000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000180000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000C0000000000",
   b    => x"00000C0000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000180000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000E0000000000",
   b    => x"00000A0000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000180000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000E0000000000",
   b    => x"00000A0000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000180000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000FFFFFFFFFFE",
   b    => x"00000FFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00001FFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000FFFFFFFFFFE",
   b    => x"00000FFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00001FFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000FFFFFFFFFFF",
   b    => x"00000FFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00001FFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00000FFFFFFFFFFF",
   b    => x"00000FFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00001FFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000100000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00000FFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000100000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000100000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000100000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000100000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000100000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000100000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000100000000000",
   b    => x"0000100000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000200000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000100000000000",
   b    => x"0000100000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000200000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000100000000000",
   b    => x"0000300000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000400000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000100000000000",
   b    => x"0000300000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000400000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000140000000000",
   b    => x"00001C0000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000300000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000140000000000",
   b    => x"00001C0000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000300000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000180000000000",
   b    => x"0000080000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000200000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000180000000000",
   b    => x"0000080000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000200000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000180000000000",
   b    => x"0000180000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000300000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000180000000000",
   b    => x"0000180000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000300000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00001C0000000000",
   b    => x"0000140000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000300000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00001C0000000000",
   b    => x"0000140000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000300000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00001FFFFFFFFFFE",
   b    => x"00001FFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00003FFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00001FFFFFFFFFFE",
   b    => x"00001FFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00003FFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00001FFFFFFFFFFF",
   b    => x"00001FFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00003FFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00001FFFFFFFFFFF",
   b    => x"00001FFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00003FFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000200000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00001FFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000200000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000200000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000200000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000200000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000200000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000200000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000200000000000",
   b    => x"0000200000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000400000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000200000000000",
   b    => x"0000200000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000400000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000200000000000",
   b    => x"0000600000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000800000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000200000000000",
   b    => x"0000600000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000800000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000280000000000",
   b    => x"0000380000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000600000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000280000000000",
   b    => x"0000380000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000600000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000300000000000",
   b    => x"0000100000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000400000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000300000000000",
   b    => x"0000100000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000400000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000300000000000",
   b    => x"0000300000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000600000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000300000000000",
   b    => x"0000300000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000600000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000380000000000",
   b    => x"0000280000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000600000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000380000000000",
   b    => x"0000280000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000600000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00003FFFFFFFFFFE",
   b    => x"00003FFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00007FFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00003FFFFFFFFFFE",
   b    => x"00003FFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00007FFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00003FFFFFFFFFFF",
   b    => x"00003FFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00007FFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00003FFFFFFFFFFF",
   b    => x"00003FFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00007FFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000400000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00003FFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000400000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000400000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000400000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000400000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000400000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000400000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000400000000000",
   b    => x"0000400000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000800000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000400000000000",
   b    => x"0000400000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000800000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000400000000000",
   b    => x"0000C00000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000400000000000",
   b    => x"0000C00000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000500000000000",
   b    => x"0000700000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000C00000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000500000000000",
   b    => x"0000700000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000C00000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000600000000000",
   b    => x"0000200000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000800000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000600000000000",
   b    => x"0000200000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000800000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000600000000000",
   b    => x"0000600000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000C00000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000600000000000",
   b    => x"0000600000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000C00000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000700000000000",
   b    => x"0000500000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000C00000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000700000000000",
   b    => x"0000500000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000C00000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00007FFFFFFFFFFE",
   b    => x"00007FFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000FFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00007FFFFFFFFFFE",
   b    => x"00007FFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000FFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00007FFFFFFFFFFF",
   b    => x"00007FFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000FFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00007FFFFFFFFFFF",
   b    => x"00007FFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000FFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000800000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00007FFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000800000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000800000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0000800000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000800000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000800000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000800000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000800000000000",
   b    => x"0000800000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000800000000000",
   b    => x"0000800000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000800000000000",
   b    => x"0001800000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0002000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000800000000000",
   b    => x"0001800000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0002000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000A00000000000",
   b    => x"0000E00000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001800000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000A00000000000",
   b    => x"0000E00000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001800000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000C00000000000",
   b    => x"0000400000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000C00000000000",
   b    => x"0000400000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000C00000000000",
   b    => x"0000C00000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001800000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000C00000000000",
   b    => x"0000C00000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001800000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000E00000000000",
   b    => x"0000A00000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001800000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000E00000000000",
   b    => x"0000A00000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001800000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000FFFFFFFFFFFE",
   b    => x"0000FFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001FFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000FFFFFFFFFFFE",
   b    => x"0000FFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001FFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000FFFFFFFFFFFF",
   b    => x"0000FFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001FFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0000FFFFFFFFFFFF",
   b    => x"0000FFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001FFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000FFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0001000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0001000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0001000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001000000000000",
   b    => x"0001000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0002000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001000000000000",
   b    => x"0001000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0002000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001000000000000",
   b    => x"0003000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0004000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001000000000000",
   b    => x"0003000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0004000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001400000000000",
   b    => x"0001C00000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0003000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001400000000000",
   b    => x"0001C00000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0003000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001800000000000",
   b    => x"0000800000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0002000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001800000000000",
   b    => x"0000800000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0002000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001800000000000",
   b    => x"0001800000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0003000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001800000000000",
   b    => x"0001800000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0003000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001C00000000000",
   b    => x"0001400000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0003000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001C00000000000",
   b    => x"0001400000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0003000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001FFFFFFFFFFFE",
   b    => x"0001FFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0003FFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001FFFFFFFFFFFE",
   b    => x"0001FFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0003FFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001FFFFFFFFFFFF",
   b    => x"0001FFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0003FFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0001FFFFFFFFFFFF",
   b    => x"0001FFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0003FFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0002000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0001FFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0002000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0002000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0002000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0002000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0002000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0002000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0002000000000000",
   b    => x"0002000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0004000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0002000000000000",
   b    => x"0002000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0004000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0002000000000000",
   b    => x"0006000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0008000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0002000000000000",
   b    => x"0006000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0008000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0002800000000000",
   b    => x"0003800000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0006000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0002800000000000",
   b    => x"0003800000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0006000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003000000000000",
   b    => x"0001000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0004000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003000000000000",
   b    => x"0001000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0004000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003000000000000",
   b    => x"0003000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0006000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003000000000000",
   b    => x"0003000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0006000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003800000000000",
   b    => x"0002800000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0006000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003800000000000",
   b    => x"0002800000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0006000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003FFFFFFFFFFFE",
   b    => x"0003FFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0007FFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003FFFFFFFFFFFE",
   b    => x"0003FFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0007FFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003FFFFFFFFFFFF",
   b    => x"0003FFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0007FFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0003FFFFFFFFFFFF",
   b    => x"0003FFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0007FFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0004000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0003FFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0004000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0004000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0004000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0004000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0004000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0004000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0004000000000000",
   b    => x"0004000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0008000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0004000000000000",
   b    => x"0004000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0008000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0004000000000000",
   b    => x"000C000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0010000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0004000000000000",
   b    => x"000C000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0010000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0005000000000000",
   b    => x"0007000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000C000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0005000000000000",
   b    => x"0007000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000C000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0006000000000000",
   b    => x"0002000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0008000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0006000000000000",
   b    => x"0002000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0008000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0006000000000000",
   b    => x"0006000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000C000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0006000000000000",
   b    => x"0006000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000C000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0007000000000000",
   b    => x"0005000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"000C000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0007000000000000",
   b    => x"0005000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"000C000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0007FFFFFFFFFFFE",
   b    => x"0007FFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000FFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0007FFFFFFFFFFFE",
   b    => x"0007FFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"000FFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0007FFFFFFFFFFFF",
   b    => x"0007FFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"000FFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0007FFFFFFFFFFFF",
   b    => x"0007FFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"000FFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0008000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0007FFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0008000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0008000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0008000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0008000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0008000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0008000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0008000000000000",
   b    => x"0008000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0010000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0008000000000000",
   b    => x"0008000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0010000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0008000000000000",
   b    => x"0018000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0020000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0008000000000000",
   b    => x"0018000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0020000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000A000000000000",
   b    => x"000E000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0018000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000A000000000000",
   b    => x"000E000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0018000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000C000000000000",
   b    => x"0004000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0010000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000C000000000000",
   b    => x"0004000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0010000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000C000000000000",
   b    => x"000C000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0018000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000C000000000000",
   b    => x"000C000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0018000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000E000000000000",
   b    => x"000A000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0018000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000E000000000000",
   b    => x"000A000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0018000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000FFFFFFFFFFFFE",
   b    => x"000FFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"001FFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000FFFFFFFFFFFFE",
   b    => x"000FFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"001FFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000FFFFFFFFFFFFF",
   b    => x"000FFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"001FFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"000FFFFFFFFFFFFF",
   b    => x"000FFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"001FFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0010000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"000FFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0010000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0010000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0010000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0010000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0010000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0010000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0010000000000000",
   b    => x"0010000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0020000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0010000000000000",
   b    => x"0010000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0020000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0010000000000000",
   b    => x"0030000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0040000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0010000000000000",
   b    => x"0030000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0040000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0014000000000000",
   b    => x"001C000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0030000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0014000000000000",
   b    => x"001C000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0030000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0018000000000000",
   b    => x"0008000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0020000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0018000000000000",
   b    => x"0008000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0020000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0018000000000000",
   b    => x"0018000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0030000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0018000000000000",
   b    => x"0018000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0030000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"001C000000000000",
   b    => x"0014000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0030000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"001C000000000000",
   b    => x"0014000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0030000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"001FFFFFFFFFFFFE",
   b    => x"001FFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"003FFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"001FFFFFFFFFFFFE",
   b    => x"001FFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"003FFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"001FFFFFFFFFFFFF",
   b    => x"001FFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"003FFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"001FFFFFFFFFFFFF",
   b    => x"001FFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"003FFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0020000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"001FFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0020000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0020000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0020000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0020000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0020000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0020000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0020000000000000",
   b    => x"0020000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0040000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0020000000000000",
   b    => x"0020000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0040000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0020000000000000",
   b    => x"0060000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0080000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0020000000000000",
   b    => x"0060000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0080000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0028000000000000",
   b    => x"0038000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0060000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0028000000000000",
   b    => x"0038000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0060000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0030000000000000",
   b    => x"0010000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0040000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0030000000000000",
   b    => x"0010000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0040000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0030000000000000",
   b    => x"0030000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0060000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0030000000000000",
   b    => x"0030000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0060000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0038000000000000",
   b    => x"0028000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0060000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0038000000000000",
   b    => x"0028000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0060000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"003FFFFFFFFFFFFE",
   b    => x"003FFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"007FFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"003FFFFFFFFFFFFE",
   b    => x"003FFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"007FFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"003FFFFFFFFFFFFF",
   b    => x"003FFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"007FFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"003FFFFFFFFFFFFF",
   b    => x"003FFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"007FFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0040000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"003FFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0040000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0040000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0040000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0040000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0040000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0040000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0040000000000000",
   b    => x"0040000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0080000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0040000000000000",
   b    => x"0040000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0080000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0040000000000000",
   b    => x"00C0000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0100000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0040000000000000",
   b    => x"00C0000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0100000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0050000000000000",
   b    => x"0070000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00C0000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0050000000000000",
   b    => x"0070000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00C0000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0060000000000000",
   b    => x"0020000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0080000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0060000000000000",
   b    => x"0020000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0080000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0060000000000000",
   b    => x"0060000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00C0000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0060000000000000",
   b    => x"0060000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00C0000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0070000000000000",
   b    => x"0050000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"00C0000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0070000000000000",
   b    => x"0050000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"00C0000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"007FFFFFFFFFFFFE",
   b    => x"007FFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00FFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"007FFFFFFFFFFFFE",
   b    => x"007FFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"00FFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"007FFFFFFFFFFFFF",
   b    => x"007FFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"00FFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"007FFFFFFFFFFFFF",
   b    => x"007FFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"00FFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0080000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"007FFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0080000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0080000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0080000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0080000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0080000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0080000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0080000000000000",
   b    => x"0080000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0100000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0080000000000000",
   b    => x"0080000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0100000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0080000000000000",
   b    => x"0180000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0200000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0080000000000000",
   b    => x"0180000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0200000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00A0000000000000",
   b    => x"00E0000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0180000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00A0000000000000",
   b    => x"00E0000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0180000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00C0000000000000",
   b    => x"0040000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0100000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00C0000000000000",
   b    => x"0040000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0100000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00C0000000000000",
   b    => x"00C0000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0180000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00C0000000000000",
   b    => x"00C0000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0180000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00E0000000000000",
   b    => x"00A0000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0180000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00E0000000000000",
   b    => x"00A0000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0180000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00FFFFFFFFFFFFFE",
   b    => x"00FFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"01FFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00FFFFFFFFFFFFFE",
   b    => x"00FFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"01FFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00FFFFFFFFFFFFFF",
   b    => x"00FFFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"01FFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"00FFFFFFFFFFFFFF",
   b    => x"00FFFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"01FFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0100000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"00FFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0100000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0100000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0100000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0100000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0100000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0100000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0100000000000000",
   b    => x"0100000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0200000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0100000000000000",
   b    => x"0100000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0200000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0100000000000000",
   b    => x"0300000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0400000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0100000000000000",
   b    => x"0300000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0400000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0140000000000000",
   b    => x"01C0000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0300000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0140000000000000",
   b    => x"01C0000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0300000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0180000000000000",
   b    => x"0080000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0200000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0180000000000000",
   b    => x"0080000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0200000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0180000000000000",
   b    => x"0180000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0300000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0180000000000000",
   b    => x"0180000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0300000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"01C0000000000000",
   b    => x"0140000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0300000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"01C0000000000000",
   b    => x"0140000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0300000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"01FFFFFFFFFFFFFE",
   b    => x"01FFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"03FFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"01FFFFFFFFFFFFFE",
   b    => x"01FFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"03FFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"01FFFFFFFFFFFFFF",
   b    => x"01FFFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"03FFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"01FFFFFFFFFFFFFF",
   b    => x"01FFFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"03FFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0200000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"01FFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0200000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0200000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0200000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0200000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0200000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0200000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0200000000000000",
   b    => x"0200000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0400000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0200000000000000",
   b    => x"0200000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0400000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0200000000000000",
   b    => x"0600000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0800000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0200000000000000",
   b    => x"0600000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0800000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0280000000000000",
   b    => x"0380000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0600000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0280000000000000",
   b    => x"0380000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0600000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0300000000000000",
   b    => x"0100000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0400000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0300000000000000",
   b    => x"0100000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0400000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0300000000000000",
   b    => x"0300000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0600000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0300000000000000",
   b    => x"0300000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0600000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0380000000000000",
   b    => x"0280000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0600000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0380000000000000",
   b    => x"0280000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0600000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"03FFFFFFFFFFFFFE",
   b    => x"03FFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"07FFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"03FFFFFFFFFFFFFE",
   b    => x"03FFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"07FFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"03FFFFFFFFFFFFFF",
   b    => x"03FFFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"07FFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"03FFFFFFFFFFFFFF",
   b    => x"03FFFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"07FFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0400000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"03FFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0400000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0400000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0400000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0400000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0400000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0400000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0400000000000000",
   b    => x"0400000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0800000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0400000000000000",
   b    => x"0400000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0800000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0400000000000000",
   b    => x"0C00000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"1000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0400000000000000",
   b    => x"0C00000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"1000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0500000000000000",
   b    => x"0700000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0C00000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0500000000000000",
   b    => x"0700000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0C00000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0600000000000000",
   b    => x"0200000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0800000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0600000000000000",
   b    => x"0200000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0800000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0600000000000000",
   b    => x"0600000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0C00000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0600000000000000",
   b    => x"0600000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0C00000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0700000000000000",
   b    => x"0500000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0C00000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0700000000000000",
   b    => x"0500000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0C00000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"07FFFFFFFFFFFFFE",
   b    => x"07FFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0FFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"07FFFFFFFFFFFFFE",
   b    => x"07FFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0FFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"07FFFFFFFFFFFFFF",
   b    => x"07FFFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"0FFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"07FFFFFFFFFFFFFF",
   b    => x"07FFFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"0FFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0800000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"07FFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0800000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"0800000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"0800000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0800000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0800000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0800000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0800000000000000",
   b    => x"0800000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"1000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0800000000000000",
   b    => x"0800000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"1000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0800000000000000",
   b    => x"1800000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"2000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0800000000000000",
   b    => x"1800000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"2000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0A00000000000000",
   b    => x"0E00000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"1800000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0A00000000000000",
   b    => x"0E00000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"1800000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0C00000000000000",
   b    => x"0400000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"1000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0C00000000000000",
   b    => x"0400000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"1000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0C00000000000000",
   b    => x"0C00000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"1800000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0C00000000000000",
   b    => x"0C00000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"1800000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0E00000000000000",
   b    => x"0A00000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"1800000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0E00000000000000",
   b    => x"0A00000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"1800000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0FFFFFFFFFFFFFFE",
   b    => x"0FFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"1FFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0FFFFFFFFFFFFFFE",
   b    => x"0FFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"1FFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0FFFFFFFFFFFFFFF",
   b    => x"0FFFFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"1FFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"0FFFFFFFFFFFFFFF",
   b    => x"0FFFFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"1FFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"0FFFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"1000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"1000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"1000000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"1000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1000000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"1000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1000000000000000",
   b    => x"1000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"2000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1000000000000000",
   b    => x"1000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"2000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1000000000000000",
   b    => x"3000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"4000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1000000000000000",
   b    => x"3000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"4000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1400000000000000",
   b    => x"1C00000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"3000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1400000000000000",
   b    => x"1C00000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"3000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1800000000000000",
   b    => x"0800000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"2000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1800000000000000",
   b    => x"0800000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"2000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1800000000000000",
   b    => x"1800000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"3000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1800000000000000",
   b    => x"1800000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"3000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1C00000000000000",
   b    => x"1400000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"3000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1C00000000000000",
   b    => x"1400000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"3000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1FFFFFFFFFFFFFFE",
   b    => x"1FFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"3FFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1FFFFFFFFFFFFFFE",
   b    => x"1FFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"3FFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1FFFFFFFFFFFFFFF",
   b    => x"1FFFFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"3FFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"1FFFFFFFFFFFFFFF",
   b    => x"1FFFFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"3FFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"2000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"1FFFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"2000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"2000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"2000000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"2000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"2000000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"2000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"2000000000000000",
   b    => x"2000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"4000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"2000000000000000",
   b    => x"2000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"4000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"2000000000000000",
   b    => x"6000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"8000000000000000",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"2000000000000000",
   b    => x"6000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000001",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"2800000000000000",
   b    => x"3800000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"6000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"2800000000000000",
   b    => x"3800000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"6000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3000000000000000",
   b    => x"1000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"4000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3000000000000000",
   b    => x"1000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"4000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3000000000000000",
   b    => x"3000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"6000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3000000000000000",
   b    => x"3000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"6000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3800000000000000",
   b    => x"2800000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"6000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3800000000000000",
   b    => x"2800000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"6000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3FFFFFFFFFFFFFFE",
   b    => x"3FFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"7FFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3FFFFFFFFFFFFFFE",
   b    => x"3FFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"7FFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3FFFFFFFFFFFFFFF",
   b    => x"3FFFFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"7FFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"3FFFFFFFFFFFFFFF",
   b    => x"3FFFFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"7FFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"4000000000000000",
   b    => x"C000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"0000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"4000000000000000",
   b    => x"C000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000001",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"4000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"3FFFFFFFFFFFFFFF",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"4000000000000000",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"4000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"4000000000000000",
   b    => x"0000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"4000000000000000",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"4000000000000000",
   b    => x"0000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"4000000000000001",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"4000000000000000",
   b    => x"4000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"8000000000000000",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"4000000000000000",
   b    => x"4000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000001",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"5000000000000000",
   b    => x"7000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"C000000000000000",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"5000000000000000",
   b    => x"7000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"C000000000000001",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"5555555555555555",
   b    => x"AAAAAAAAAAAAAAAA",
-  cin  => "0",
+  cin  => '0',
   s    => x"FFFFFFFFFFFFFFFF",
-  cout => "0",
-  ovfl => "0"
+  cout => '0',
+  ovfl => '0'
 )
 , (
   a    => x"5555555555555555",
   b    => x"AAAAAAAAAAAAAAAA",
-  cin  => "1",
+  cin  => '1',
   s    => x"0000000000000000",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"5555555555555555",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"5555555555555554",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"5555555555555555",
   b    => x"FFFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"5555555555555555",
-  cout => "1",
-  ovfl => "0"
+  cout => '1',
+  ovfl => '0'
 )
 , (
   a    => x"5555555555555555",
   b    => x"5555555555555555",
-  cin  => "0",
+  cin  => '0',
   s    => x"AAAAAAAAAAAAAAAA",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"5555555555555555",
   b    => x"5555555555555555",
-  cin  => "1",
+  cin  => '1',
   s    => x"AAAAAAAAAAAAAAAB",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"6000000000000000",
   b    => x"2000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"8000000000000000",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"6000000000000000",
   b    => x"2000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"8000000000000001",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"6000000000000000",
   b    => x"6000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"C000000000000000",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"6000000000000000",
   b    => x"6000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"C000000000000001",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"7000000000000000",
   b    => x"5000000000000000",
-  cin  => "0",
+  cin  => '0',
   s    => x"C000000000000000",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"7000000000000000",
   b    => x"5000000000000000",
-  cin  => "1",
+  cin  => '1',
   s    => x"C000000000000001",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"7FFFFFFFFFFFFFFE",
   b    => x"7FFFFFFFFFFFFFFF",
-  cin  => "0",
+  cin  => '0',
   s    => x"FFFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"7FFFFFFFFFFFFFFE",
   b    => x"7FFFFFFFFFFFFFFF",
-  cin  => "1",
+  cin  => '1',
   s    => x"FFFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"7FFFFFFFFFFFFFFF",
   b    => x"7FFFFFFFFFFFFFFE",
-  cin  => "0",
+  cin  => '0',
   s    => x"FFFFFFFFFFFFFFFD",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 , (
   a    => x"7FFFFFFFFFFFFFFF",
   b    => x"7FFFFFFFFFFFFFFE",
-  cin  => "1",
+  cin  => '1',
   s    => x"FFFFFFFFFFFFFFFE",
-  cout => "0",
-  ovfl => "1"
+  cout => '0',
+  ovfl => '1'
 )
 );
   constant AdderVectorCount : natural := 1542;

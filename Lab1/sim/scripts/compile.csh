@@ -9,5 +9,8 @@ vlib work
 vmap work work
 
 # Compiling the VHDL code for simulation
-vcom ../vhdl/rgb2gray.vhd 
-vcom ../vhdl/tb_rgb2gray.vhd #-novopt 
+vcom ../vhdl/Merger.vhd
+vcom ../vhdl/LFRecursive.vhd
+vcom ../vhdl/LadnerFischer.vhd
+# vcom ../vhdl/rgb2gray.vhd 
+# vcom ../vhdl/tb_rgb2gray.vhd #-novopt 
