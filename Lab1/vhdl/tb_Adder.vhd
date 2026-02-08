@@ -8,7 +8,7 @@ use work.test_cases_64.all;
 entity tb_Adder is
   generic (
     N                : integer := 64;
-    ResultVectorPath : string  := "..\Documentation\OutputFiles\test_results.rvs"
+    ResultVectorPath : string  := "./output_files/test_results.rvs"
   );
 end entity;
 
@@ -16,7 +16,7 @@ architecture sim of tb_Adder is
   constant PreStimTime  : time   := 50 ns;
   constant PostStimTime : time   := 50 ns;
   constant StableTime   : time   := 100 ns;
-  constant ClkPeriod    : time   := 20 ns;
+  constant ClkPeriod    : time   := 200 ns;
   constant Separator    : string := string'(", ");
 
   -- Helper: std_logic to string
@@ -131,7 +131,7 @@ begin
       PropDelay <= EndTime_v - (StartTime_v + StableTime);
 
       -- Write [tpd, input, expected, output] results
-      write(output_line, integer'image(integer(PropDelay / 1 ps)));
+      write(output_line, integer'image(integer(PropDelay / 1 ns)));
       write(output_line, Separator);
       -- INPUT
       write(output_line, hex_image(A_test));

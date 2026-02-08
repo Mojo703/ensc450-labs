@@ -1,0 +1,286 @@
+# //  ModelSim SE-64 10.7a Mar 26 2018Linux 4.18.0-553.97.1.el8_10.x86_64
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim E 
+# Start time: 20:49:02 on Feb 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-13130) Failed to find design unit E.
+#         Searched libraries:
+#             work
+# Optimization failed
+# Error loading design
+# End time: 20:49:02 on Feb 07,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+source scripts/simulate.tcl
+# vsim E 
+# Start time: 20:49:12 on Feb 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-13130) Failed to find design unit E.
+#         Searched libraries:
+#             work
+# Optimization failed
+# Error loading design
+# End time: 20:49:12 on Feb 07,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# No Design Loaded!
+source scripts/generate_vcd.tcl
+# vsim E 
+# Start time: 20:50:45 on Feb 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-13130) Failed to find design unit E.
+#         Searched libraries:
+#             work
+# Optimization failed
+# Error loading design
+# End time: 20:50:45 on Feb 07,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# No Design Loaded!
+source scripts/simulate.tcl
+# vsim tb_Adder 
+# Start time: 20:59:56 on Feb 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../vhdl/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.string_ops(body)
+# Loading work.test_cases_64
+# Loading ieee.math_real(body)
+# Loading work.tb_adder(sim)#1
+# Loading work.ladnerfischer(behavioral)#1
+# Loading work.lfrecursive(behavioral)#1
+# Loading work.LFRecursive(behavioral)
+# Loading work.merger(behavioral)
+# Loading work.merger(behavioral)#1
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Root: /
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Fatal: (SIGFPE) Floating point exception.
+#    Time: 150 ns  Iteration: 0  Process: /tb_adder/line__87 File: ../vhdl/tb_Adder.vhd
+# Fatal error in ForLoop loop at ../vhdl/tb_Adder.vhd line 134
+# 
+# HDL call sequence:
+# Stopped at ../vhdl/tb_Adder.vhd 134 ForLoop loop
+# 
+source scripts/simulate.tcl
+# End time: 21:01:51 on Feb 07,2026, Elapsed time: 0:01:55
+# Errors: 2, Warnings: 0
+# vsim tb_Adder 
+# Start time: 21:01:51 on Feb 07,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.string_ops(body)
+# Loading work.test_cases_64
+# Loading ieee.math_real(body)
+# Loading work.tb_adder(sim)#1
+# Loading work.ladnerfischer(behavioral)#1
+# Loading work.lfrecursive(behavioral)#1
+# Loading work.LFRecursive(behavioral)
+# Loading work.merger(behavioral)
+# Loading work.merger(behavioral)#1
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Root: /
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Fatal: (SIGFPE) Floating point exception.
+#    Time: 150 ns  Iteration: 0  Process: /tb_adder/line__87 File: ../vhdl/tb_Adder.vhd
+# Fatal error in ForLoop loop at ../vhdl/tb_Adder.vhd line 134
+# 
+# HDL call sequence:
+# Stopped at ../vhdl/tb_Adder.vhd 134 ForLoop loop
+# 
+source scripts/simulate.tcl
+# End time: 21:02:20 on Feb 07,2026, Elapsed time: 0:00:29
+# Errors: 2, Warnings: 0
+# vsim tb_Adder 
+# Start time: 21:02:20 on Feb 07,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.string_ops(body)
+# Loading work.test_cases_64
+# Loading ieee.math_real(body)
+# Loading work.tb_adder(sim)#1
+# Loading work.ladnerfischer(behavioral)#1
+# Loading work.lfrecursive(behavioral)#1
+# Loading work.LFRecursive(behavioral)
+# Loading work.merger(behavioral)
+# Loading work.merger(behavioral)#1
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Root: /
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Fatal: (SIGFPE) Floating point exception.
+#    Time: 150 ns  Iteration: 0  Process: /tb_adder/line__87 File: ../vhdl/tb_Adder.vhd
+# Fatal error in ForLoop loop at ../vhdl/tb_Adder.vhd line 134
+# 
+# HDL call sequence:
+# Stopped at ../vhdl/tb_Adder.vhd 134 ForLoop loop
+# 
+source scripts/simulate.tcl
+# End time: 21:02:58 on Feb 07,2026, Elapsed time: 0:00:38
+# Errors: 2, Warnings: 0
+# vsim tb_Adder 
+# Start time: 21:02:58 on Feb 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../vhdl/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.string_ops(body)
+# Loading work.test_cases_64
+# Loading ieee.math_real(body)
+# Loading work.tb_adder(sim)#1
+# Loading work.ladnerfischer(behavioral)#1
+# Loading work.lfrecursive(behavioral)#1
+# Loading work.LFRecursive(behavioral)
+# Loading work.merger(behavioral)
+# Loading work.merger(behavioral)#1
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+source scripts/simulate.tcl
+# End time: 21:04:47 on Feb 07,2026, Elapsed time: 0:01:49
+# Errors: 0, Warnings: 0
+# vsim tb_Adder 
+# Start time: 21:04:47 on Feb 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../vhdl/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.string_ops(body)
+# Loading work.test_cases_64
+# Loading ieee.math_real(body)
+# Loading work.tb_adder(sim)#1
+# Loading work.ladnerfischer(behavioral)#1
+# Loading work.lfrecursive(behavioral)#1
+# Loading work.LFRecursive(behavioral)
+# Loading work.merger(behavioral)
+# Loading work.merger(behavioral)#1
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+source scripts/simulate.tcl
+# End time: 21:06:04 on Feb 07,2026, Elapsed time: 0:01:17
+# Errors: 0, Warnings: 0
+# vsim tb_Adder 
+# Start time: 21:06:04 on Feb 07,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.string_ops(body)
+# Loading work.test_cases_64
+# Loading ieee.math_real(body)
+# Loading work.tb_adder(sim)#1
+# Loading work.ladnerfischer(behavioral)#1
+# Loading work.lfrecursive(behavioral)#1
+# Loading work.LFRecursive(behavioral)
+# Loading work.merger(behavioral)
+# Loading work.merger(behavioral)#1
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+source scripts/simulate.tcl
+# End time: 21:08:59 on Feb 07,2026, Elapsed time: 0:02:55
+# Errors: 0, Warnings: 0
+# vsim tb_Adder 
+# Start time: 21:08:59 on Feb 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../vhdl/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.string_ops(body)
+# Loading work.test_cases_64
+# Loading ieee.math_real(body)
+# Loading work.tb_adder(sim)#1
+# Loading work.ladnerfischer(behavioral)#1
+# Loading work.lfrecursive(behavioral)#1
+# Loading work.LFRecursive(behavioral)
+# Loading work.merger(behavioral)
+# Loading work.merger(behavioral)#1
+# ** Warning: (vsim-7) Failed to open VHDL file "/OutputFiles/test_results.rvs" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_adder
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Warning: (vsim-7) Failed to open VHDL file "/OutputFiles/test_results.rvs" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_adder
+# ** Fatal: (vsim-7) Failed to open VHDL file "/OutputFiles/test_results.rvs" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 200 ns  Iteration: 0  Process: /tb_adder/line__87 File: ../vhdl/tb_Adder.vhd
+# Fatal error in ForLoop loop at ../vhdl/tb_Adder.vhd line 157
+# 
+# HDL call sequence:
+# Stopped at ../vhdl/tb_Adder.vhd 157 ForLoop loop
+# 
+source scripts/simulate.tcl
+# End time: 21:09:46 on Feb 07,2026, Elapsed time: 0:00:47
+# Errors: 2, Warnings: 0
+# vsim tb_Adder 
+# Start time: 21:09:46 on Feb 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../vhdl/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.string_ops(body)
+# Loading work.test_cases_64
+# Loading ieee.math_real(body)
+# Loading work.tb_adder(sim)#1
+# Loading work.ladnerfischer(behavioral)#1
+# Loading work.lfrecursive(behavioral)#1
+# Loading work.LFRecursive(behavioral)
+# Loading work.merger(behavioral)
+# Loading work.merger(behavioral)#1
+# ** Warning: (vsim-7) Failed to open VHDL file ".//OutputFiles//test_results.rvs" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_adder
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Warning: (vsim-7) Failed to open VHDL file ".//OutputFiles//test_results.rvs" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_adder
+# ** Fatal: (vsim-7) Failed to open VHDL file ".//OutputFiles//test_results.rvs" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 200 ns  Iteration: 0  Process: /tb_adder/line__87 File: ../vhdl/tb_Adder.vhd
+# Fatal error in ForLoop loop at ../vhdl/tb_Adder.vhd line 157
+# 
+# HDL call sequence:
+# Stopped at ../vhdl/tb_Adder.vhd 157 ForLoop loop
+# 
+source scripts/simulate.tcl
+# End time: 21:10:57 on Feb 07,2026, Elapsed time: 0:01:11
+# Errors: 2, Warnings: 0
+# vsim tb_Adder 
+# Start time: 21:10:57 on Feb 07,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../vhdl/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.string_ops(body)
+# Loading work.test_cases_64
+# Loading ieee.math_real(body)
+# Loading work.tb_adder(sim)#1
+# Loading work.ladnerfischer(behavioral)#1
+# Loading work.lfrecursive(behavioral)#1
+# Loading work.LFRecursive(behavioral)
+# Loading work.merger(behavioral)
+# Loading work.merger(behavioral)#1
+# ** Note: (vsim-8009) Loading existing optimized design _opt
