@@ -18,20 +18,20 @@ pub struct Args {
 }
 
 #[derive(Debug, Clone, Copy, Hash, Eq, PartialEq, PartialOrd, Ord)]
-struct LadnerFischerIn {
+struct AdderIn {
     a: Option<i64>,
     b: Option<i64>,
     cin: Option<bool>,
 }
 
 #[derive(Debug, Clone, Copy, Hash, Eq, PartialEq, PartialOrd, Ord)]
-struct LadnerFischerOut {
+struct AdderOut {
     s: Option<i64>,
     cout: Option<bool>,
     ovfl: Option<bool>,
 }
 
-impl LadnerFischerOut {
+impl AdderOut {
     fn none() -> Self {
         Self {
             s: None,
@@ -41,7 +41,7 @@ impl LadnerFischerOut {
     }
 }
 
-impl LadnerFischerIn {
+impl AdderIn {
     fn new(a: i64, b: i64, cin: bool) -> Self {
         Self {
             a: Some(a),
@@ -50,11 +50,11 @@ impl LadnerFischerIn {
         }
     }
 
-    fn perform(self) -> LadnerFischerOut {
-        let LadnerFischerIn { a, b, cin } = self;
+    fn perform(self) -> AdderOut {
+        let AdderIn { a, b, cin } = self;
 
         let (Some(a), Some(b), Some(cin)) = (a, b, cin) else {
-            return LadnerFischerOut::none();
+            return AdderOut::none();
         };
 
         // Convert to unsigned for addition
@@ -78,7 +78,7 @@ impl LadnerFischerIn {
         let ovfl =
             ((sa >= 0) && (sb >= 0) && (s_signed < 0)) || ((sa < 0) && (sb < 0) && (s_signed >= 0));
 
-        LadnerFischerOut {
+        AdderOut {
             s: Some(sum_final.cast_signed()),
             cout: Some(cout),
             ovfl: Some(ovfl),
@@ -87,13 +87,13 @@ impl LadnerFischerIn {
 }
 
 #[derive(Debug, Clone, Copy, Hash, Eq, PartialEq, PartialOrd, Ord)]
-struct LadnerFischerState {
-    input: LadnerFischerIn,
-    output: LadnerFischerOut,
+struct AdderState {
+    input: AdderIn,
+    output: AdderOut,
 }
 
-impl LadnerFischerState {
-    fn new(input: LadnerFischerIn) -> Self {
+impl AdderState {
+    fn new(input: AdderIn) -> Self {
         let output = input.perform();
         Self { input, output }
     }
@@ -103,9 +103,9 @@ impl LadnerFischerState {
         const I_D: LogicVal = LogicVal::ForceUnknown;
         const O_D: LogicVal = LogicVal::NotCare;
 
-        let LadnerFischerState { input, output } = self;
-        let LadnerFischerIn { a, b, cin } = input;
-        let LadnerFischerOut { s, cout, ovfl } = output;
+        let AdderState { input, output } = self;
+        let AdderIn { a, b, cin } = input;
+        let AdderOut { s, cout, ovfl } = output;
 
         // Input
         let a = i64::as_logic_vec(a, I_D).to_hex_string();
@@ -138,8 +138,8 @@ fn main() -> io::Result<()> {
     let cin_tests = [true, false];
 
     let cases = itertools::iproduct!(i64_tests, cin_tests)
-        .map(|((a, b), cin)| LadnerFischerIn::new(a, b, cin))
-        .map(LadnerFischerState::new)
+        .map(|((a, b), cin)| AdderIn::new(a, b, cin))
+        .map(AdderState::new)
         .collect();
 
     write_vhdl_package(&output, cases)?;
@@ -151,7 +151,7 @@ fn vhdl_entity_name(path: &Path) -> String {
     path.file_stem().unwrap().to_string_lossy().to_string()
 }
 
-fn write_vhdl_package(path: &Path, cases: BTreeSet<LadnerFischerState>) -> io::Result<()> {
+fn write_vhdl_package(path: &Path, cases: BTreeSet<AdderState>) -> io::Result<()> {
     let entity = vhdl_entity_name(path);
 
     let file = fs::File::create(path)?;
