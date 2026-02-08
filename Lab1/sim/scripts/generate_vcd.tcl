@@ -1,10 +1,15 @@
-vsim E
+vsim work.tb_Adder
 restart -f
-# Run Init time (Time needed to put the system in a consistent state, but that you don't want to measure. For example reset time, operand read, etc)
+
+# Run init time (reset, setup, etc. – not measured)
 run 20 ns
-vcd add -file Adder.vcd -r /e/uut/* 
-# Run VCD time, depending on how long is the period you want to run your power analysis upon
-run 200ns
-# Closes vcd file
+
+# Dump only the DUT for power analysis
+vcd add -file Adder.vcd -r /tb_Adder/DUT/*
+
+# Run VCD capture window
+run 200 ns
+
+# Close and convert VCD
 vcd flush Adder.vcd
-vcd2saif -input Adder.vcd -output Adder.vcd.saif 
+vcd2saif -input Adder.vcd -output Adder.vcd.saif

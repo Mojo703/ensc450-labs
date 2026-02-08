@@ -80,9 +80,6 @@ set_dont_touch_network CLK
 set_input_delay  0.8 -max -clock CLK  [all_inputs]
 set_output_delay 0.8 -max -clock CLK  [all_outputs]
 
-# There is no reason to make the reset line so fast to complete in one clock
-set_max_delay 20 -from resetn
-
 # -----------------------------
 # Running Technology Mapping
 # -----------------------------
