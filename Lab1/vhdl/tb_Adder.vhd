@@ -5,17 +5,18 @@ use std.textio.all;
 use work.string_ops.all; -- split and string functions
 use work.test_cases_64.all;
 
-entity TestBench is
+entity tb_Adder is
   generic (
     N                : integer := 64;
     ResultVectorPath : string  := "..\Documentation\OutputFiles\test_results.rvs"
   );
 end entity;
 
-architecture sim of TestBench is
+architecture sim of tb_Adder is
   constant PreStimTime  : time   := 50 ns;
   constant PostStimTime : time   := 50 ns;
   constant StableTime   : time   := 100 ns;
+  constant ClkPeriod    : time   := 20 ns;
   constant Separator    : string := string'(", ");
 
   -- Helper: std_logic to string
@@ -33,9 +34,10 @@ architecture sim of TestBench is
   end function;
 
   -- DUT
-  component LadnerFischer is
+  component Adder is
     generic (N : natural := 64);
     port (
+      clk        : in std_logic;
       A, B       : in std_logic_vector(N - 1 downto 0);
       S          : out std_logic_vector(N - 1 downto 0);
       Cin        : in std_logic;
@@ -44,6 +46,7 @@ architecture sim of TestBench is
   end component;
 
   -- Signals
+  signal clk  : std_logic := '0';
   signal A, B : std_logic_vector(N - 1 downto 0);
   signal Cin  : std_logic := '0';
   signal S    : std_logic_vector(N - 1 downto 0);
@@ -51,13 +54,27 @@ architecture sim of TestBench is
   signal Ovfl : std_logic;
 
   signal PropDelay : time := 0 ns;
+  signal sim_done  : boolean := false;
 
 begin
 
-  DUT : LadnerFischer
+  -- Clock generator
+  clk_gen : process
+  begin
+    while not sim_done loop
+      clk <= '0';
+      wait for ClkPeriod / 2;
+      clk <= '1';
+      wait for ClkPeriod / 2;
+    end loop;
+    wait;
+  end process;
+
+  DUT : Adder
   generic map(N => N)
   port map
   (
+    clk  => clk,
     A    => A,
     B    => B,
     S    => S,
@@ -83,6 +100,9 @@ begin
 
     variable output_line : line;
   begin
+    -- Wait for initial setup
+    wait for PreStimTime;
+    
     for i in AdderVectors'range loop
       -- Extract inputs from test vectors
       A_test   := AdderVectors(i).a;
@@ -94,20 +114,18 @@ begin
       Cout_exp := AdderVectors(i).cout;
       Ovfl_exp := AdderVectors(i).ovfl;
 
-      -- Apply PreStim
-      A   <= (others => 'X');
-      B   <= (others => 'X');
-      Cin <= 'X';
-
-      wait for PreStimTime;
-
-      -- Apply stimulus
+      -- Apply stimulus before clock edge
       A   <= A_test;
       B   <= B_test;
       Cin <= Cin_test;
 
-      -- Wait for all output signals to be stable
+      -- Wait for rising edge to latch inputs
+      wait until rising_edge(clk);
+      
+      -- Record start time (after inputs are latched)
       StartTime_v := now;
+      
+      -- Wait for all output signals to be stable
       wait until S'stable(StableTime) and Cout'stable(StableTime) and Ovfl'stable(StableTime);
       EndTime_v := now;
       PropDelay <= EndTime_v - (StartTime_v + StableTime);
@@ -142,6 +160,7 @@ begin
     end loop;
 
     report "Simulation finished, results written to " & ResultVectorPath;
+    sim_done <= true;
     wait;
   end process;
 
