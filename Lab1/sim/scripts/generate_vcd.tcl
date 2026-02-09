@@ -8,7 +8,7 @@ run 20 ns
 vcd add -file Adder.vcd -r /tb_Adder/DUT/*
 
 # Run VCD capture window
-run 200 ns
+run 100000 ns
 
 # Close and convert VCD
 vcd flush Adder.vcd

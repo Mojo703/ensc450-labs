@@ -16,7 +16,8 @@ vcom ../vhdl/Adder.vhd
 
 # tb stuff
 vcom ../vhdl/string_ops.vhd
-vcom ../vhdl/test_cases_64.vhd
+vcom ../vhdl/test_cases_128.vhd
+# vcom ../vhdl/test_cases_64.vhd
 vcom ../vhdl/tb_Adder.vhd
 # vcom ../vhdl/rgb2gray.vhd 
 # vcom ../vhdl/tb_rgb2gray.vhd #-novopt 
