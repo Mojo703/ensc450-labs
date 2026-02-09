@@ -12,4 +12,4 @@ run 200 ns
 
 # Close and convert VCD
 vcd flush Adder.vcd
-vcd2saif -input Adder.vcd -output Adder.vcd.saif
+vcd2saif -input Adder.vcd -output Adder.vcd.saif -instance /tb_adder/DUT
