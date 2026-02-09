@@ -40,9 +40,15 @@ set link_library  [concat $target_library $synthetic_library]
 # -----------------------------
 
 # Reading input VHDL File(s): This steps only parses VHDL determining syntax errors, but the Synthesis process is not performed yet
+analyze -format vhdl ../vhdl/Merger.vhd
+analyze -format vhdl ../vhdl/LFRecursive.vhd
+analyze -format vhdl ../vhdl/LadnerFischer.vhd
 analyze -format vhdl ../vhdl/Adder.vhd
 
 # Logic Synthesis
+elaborate Merger 
+elaborate LFRecursive
+elaborate LadnerFischer 
 elaborate $TOP 
 
 # The link command will resolve dependencies in the HDL hierarchy, so that if a sub-module in the hierarchy is missing or badly defined, 
@@ -72,7 +78,7 @@ set_load                        5         [all_outputs]
 
 ## Timing Constraints
 # Establishing clock period:  Since clock is ideal, we don't want the tool to optimize the clk net so we set it as "dont touch"
-create_clock -name CLK -period 2.5 -waveform {0 1.25} {clk}
+create_clock -name CLK -period 3.0 -waveform {0 1.25} {clk}
 set_dont_touch_network CLK  
 
 # Delays imposed by the communication to/from other blocks in the system. 
