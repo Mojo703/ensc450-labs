@@ -15,6 +15,16 @@ architecture RTL of Adder is
   -- Internal signals for latched inputs
   signal A_reg, B_reg : std_logic_vector(N - 1 downto 0);
   signal Cin_reg      : std_logic;
+
+  component LadnerFischer is
+    generic (N : natural := 64);
+    port (
+      A, B       : in std_logic_vector(N - 1 downto 0);
+      S          : out std_logic_vector(N - 1 downto 0);
+      Cin        : in std_logic;
+      Cout, Ovfl : out std_logic);
+  end component;
+
   
 begin
   -- Input latching process
@@ -28,7 +38,7 @@ begin
   end process;
   
   -- Instantiate the LadnerFischer adder
-  adder_inst : entity work.LadnerFischer
+  adder_inst : LadnerFischer
     generic map (N => N)
     port map (
       A    => A_reg,
