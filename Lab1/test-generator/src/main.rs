@@ -121,10 +121,10 @@ impl AdderState {
             r#"(
   a    => x"{a}",
   b    => x"{b}",
-  cin  => "{cin}",
+  cin  => '{cin}',
   s    => x"{s}",
-  cout => "{cout}",
-  ovfl => "{ovfl}"
+  cout => '{cout}',
+  ovfl => '{ovfl}'
 )"#,
         )
     }
@@ -163,8 +163,8 @@ fn write_vhdl_package(path: &Path, cases: BTreeSet<AdderState>) -> io::Result<()
 
     // Type declaration
     writeln!(w, "  type AdderCase is record")?;
-    writeln!(w, "    a, b, s : std_logic_vector(63 downto 0);")?;
-    writeln!(w, "    cin, cout, ovfl : std_logic_vector(0 downto 0);")?;
+    writeln!(w, "    a, b, s : std_logic_vector(127 downto 0);")?;
+    writeln!(w, "    cin, cout, ovfl : std_logic;")?;
     writeln!(w, "  end record;")?;
 
     writeln!(

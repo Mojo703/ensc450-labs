@@ -177,7 +177,7 @@ pub trait EnumLogicVec<const N: usize>: Sized {
     }
 }
 
-impl EnumLogicVec<64> for i128 {
+impl EnumLogicVec<128> for i128 {
     fn as_i128(self) -> i128 {
         self
     }
