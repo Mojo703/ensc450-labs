@@ -19,14 +19,14 @@ pub struct Args {
 
 #[derive(Debug, Clone, Copy, Hash, Eq, PartialEq, PartialOrd, Ord)]
 struct AdderIn {
-    a: Option<i64>,
-    b: Option<i64>,
+    a: Option<i128>,
+    b: Option<i128>,
     cin: Option<bool>,
 }
 
 #[derive(Debug, Clone, Copy, Hash, Eq, PartialEq, PartialOrd, Ord)]
 struct AdderOut {
-    s: Option<i64>,
+    s: Option<i128>,
     cout: Option<bool>,
     ovfl: Option<bool>,
 }
@@ -42,7 +42,7 @@ impl AdderOut {
 }
 
 impl AdderIn {
-    fn new(a: i64, b: i64, cin: bool) -> Self {
+    fn new(a: i128, b: i128, cin: bool) -> Self {
         Self {
             a: Some(a),
             b: Some(b),
@@ -60,7 +60,7 @@ impl AdderIn {
         // Convert to unsigned for addition
         let ua = a.cast_unsigned();
         let ub = b.cast_unsigned();
-        let cin_val = if cin { 1u64 } else { 0u64 };
+        let cin_val = if cin { 1u128 } else { 0u128 };
 
         // Perform addition with carry
         let (sum_low, carry1) = ua.overflowing_add(ub);
@@ -108,12 +108,12 @@ impl AdderState {
         let AdderOut { s, cout, ovfl } = output;
 
         // Input
-        let a = i64::as_logic_vec(a, I_D).to_hex_string();
-        let b = i64::as_logic_vec(b, I_D).to_hex_string();
+        let a = i128::as_logic_vec(a, I_D).to_hex_string();
+        let b = i128::as_logic_vec(b, I_D).to_hex_string();
         let cin = bool::as_logic_vec(cin, I_D).to_bits_string();
 
         // Output
-        let s = i64::as_logic_vec(s, O_D).to_hex_string();
+        let s = i128::as_logic_vec(s, O_D).to_hex_string();
         let cout = bool::as_logic_vec(cout, O_D).to_bits_string();
         let ovfl = bool::as_logic_vec(ovfl, O_D).to_bits_string();
 
@@ -133,11 +133,11 @@ impl AdderState {
 fn main() -> io::Result<()> {
     let Args { output } = Args::parse();
 
-    let i64_tests = test_i64();
+    let i128_tests = test_i128();
 
     let cin_tests = [true, false];
 
-    let cases = itertools::iproduct!(i64_tests, cin_tests)
+    let cases = itertools::iproduct!(i128_tests, cin_tests)
         .map(|((a, b), cin)| AdderIn::new(a, b, cin))
         .map(AdderState::new)
         .collect();
@@ -190,17 +190,17 @@ fn write_vhdl_package(path: &Path, cases: BTreeSet<AdderState>) -> io::Result<()
     Ok(())
 }
 
-fn test_i64() -> Vec<(i64, i64)> {
-    const ONES: i64 = !0i64;
+fn test_i128() -> Vec<(i128, i128)> {
+    const ONES: i128 = !0i128;
     let mut tests = Vec::new();
 
     tests.push((0, 0));
     tests.push((ONES, 0));
     tests.push((0, ONES));
 
-    for bit in 0..i64::BITS {
+    for bit in 0..i128::BITS {
         // Single bits
-        let v = 1i64 << bit;
+        let v = 1i128 << bit;
         tests.push((v, 0));
         tests.push((0, v));
 
@@ -212,9 +212,9 @@ fn test_i64() -> Vec<(i64, i64)> {
         tests.push((ONES, v));
     }
 
-    for bit in 0..i64::BITS - 1 {
-        let x = 1i64 << bit;
-        let y = 3i64 << bit;
+    for bit in 0..i128::BITS - 1 {
+        let x = 1i128 << bit;
+        let y = 3i128 << bit;
 
         // Triple bits
         tests.push((x, y));
@@ -225,17 +225,17 @@ fn test_i64() -> Vec<(i64, i64)> {
         tests.push((y, y));
     }
 
-    for bit in 0..i64::BITS - 2 {
+    for bit in 0..i128::BITS - 2 {
         // Five bits
-        let x = 5i64 << bit;
-        let y = 7i64 << bit;
+        let x = 5i128 << bit;
+        let y = 7i128 << bit;
 
         tests.push((x, y));
         tests.push((y, x));
     }
 
     // Alternating bits
-    let repeating: [u64; _] = [
+    let repeating: [u128; _] = [
         0xAAAA_AAAA_AAAA_AAAA,
         0x5555_5555_5555_5555,
         0xFFFF_FFFF_FFFF_FFFF,
@@ -245,9 +245,9 @@ fn test_i64() -> Vec<(i64, i64)> {
     }
 
     // Contiguous
-    for n in 0..u64::BITS {
-        let a: u64 = ((1 << n) - 1) + (1 << n);
-        let b: u64 = ((1 << n) - 1) + ((1 << n) - 1);
+    for n in 0..u128::BITS {
+        let a: u128 = ((1 << n) - 1) + (1 << n);
+        let b: u128 = ((1 << n) - 1) + ((1 << n) - 1);
         tests.push((a.cast_signed(), b.cast_signed()));
         tests.push((b.cast_signed(), a.cast_signed()));
     }

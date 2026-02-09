@@ -123,7 +123,7 @@ impl<const N: usize> LogicVec<N> {
     #[allow(unused)] // Used by Display
     pub const UNKNOWN: [char; N] = ['X'; N];
 
-    pub fn new_or(value: Option<i64>, other: LogicVal) -> Self {
+    pub fn new_or(value: Option<i128>, other: LogicVal) -> Self {
         Self(match value {
             Some(value) => std::array::from_fn(|i| LogicVal::Val((value & (1 << i)) != 0)),
             None => std::array::from_fn(|_| other),
@@ -170,21 +170,21 @@ impl<const N: usize> LogicVec<N> {
 }
 
 pub trait EnumLogicVec<const N: usize>: Sized {
-    fn as_i64(self) -> i64;
+    fn as_i128(self) -> i128;
 
     fn as_logic_vec(val: Option<Self>, default: LogicVal) -> LogicVec<N> {
-        LogicVec::<N>::new_or(val.map(Self::as_i64), default)
+        LogicVec::<N>::new_or(val.map(Self::as_i128), default)
     }
 }
 
-impl EnumLogicVec<64> for i64 {
-    fn as_i64(self) -> i64 {
+impl EnumLogicVec<64> for i128 {
+    fn as_i128(self) -> i128 {
         self
     }
 }
 
 impl EnumLogicVec<1> for bool {
-    fn as_i64(self) -> i64 {
+    fn as_i128(self) -> i128 {
         if self { 1 } else { 0 }
     }
 }
