@@ -4,7 +4,7 @@ use ieee.math_real.all;
 use std.standard.all;
 
 entity LadnerFischer is
-  generic (N : natural := 512);
+  generic (N : natural := 1024);
   port (
     A, B       : in std_logic_vector(N - 1 downto 0);
     S          : out std_logic_vector(N - 1 downto 0);
@@ -14,7 +14,7 @@ end entity;
 
 architecture behavioral of LadnerFischer is
   component LFRecursive is
-    generic (N : natural := 512);
+    generic (N : natural := 1024);
     port (
       Gen, Prop           : in std_logic_vector(N - 1 downto 0);
       blockGen, blockProp : out std_logic_vector(N - 1 downto 0)

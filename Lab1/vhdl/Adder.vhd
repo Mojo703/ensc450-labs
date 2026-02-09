@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity Adder is
-  generic (N : natural := 512);
+  generic (N : natural := 1024);
   port (
     clk        : in std_logic;
     A, B       : in std_logic_vector(N - 1 downto 0);
@@ -17,7 +17,7 @@ architecture RTL of Adder is
   signal Cin_reg      : std_logic;
 
   component LadnerFischer is
-    generic (N : natural := 512);
+    generic (N : natural := 1024);
     port (
       A, B       : in std_logic_vector(N - 1 downto 0);
       S          : out std_logic_vector(N - 1 downto 0);
