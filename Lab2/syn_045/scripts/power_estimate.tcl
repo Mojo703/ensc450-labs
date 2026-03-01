@@ -35,4 +35,4 @@ foreach file $VCDFILES {
     report_power -analysis_effort high 
 }
 
-#exit
+exit
