@@ -12,7 +12,7 @@ use std::{
 
 // # Configuration
 /// Bit width of the adder under test. Must be a positive multiple of 4.
-const BIT_WIDTH: usize = 2048;
+const BIT_WIDTH: usize = 1024;
 /// Number of test cases to randomly select for output.
 const TEST_COUNT: usize = 1024;
 /// Concrete BitVec type for this adder width.

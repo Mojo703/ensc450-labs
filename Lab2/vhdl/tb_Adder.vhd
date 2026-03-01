@@ -3,11 +3,11 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use std.textio.all;
 use work.string_ops.all; -- split and string functions
-use work.test_cases_128.all;
+use work.test_cases_1024.all;
 
 entity tb_Adder is
   generic (
-    N                : integer := 128;
+    N                : integer := 1024;
     ResultVectorPath : string  := "./output_files/test_results.rvs"
   );
 end entity;
@@ -33,7 +33,7 @@ architecture sim of tb_Adder is
 
   -- DUT
   component Adder is
-    generic (N : natural := 128);
+    generic (N : natural := 1024);
     port (
       clk        : in std_logic;
       A, B       : in std_logic_vector(N - 1 downto 0);
