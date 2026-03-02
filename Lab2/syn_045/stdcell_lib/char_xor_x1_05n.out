@@ -1,0 +1,159 @@
+Using: /usr/bin/time -p /Lnx_STC/tools/synopsys/hspice_vD-2010.03-SP2/hspice/linux/hspice64  char_xor_x1_05n.cir
+ ****** HSPICE -- D-2010.03-SP2 64-BIT (Aug 26 2010) linux ******               
+  Copyright (C) 2010 Synopsys, Inc. All Rights Reserved.                        
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the 
+  terms and conditions of the license agreement from Synopsys.
+  Use of this program is your acceptance to be bound by the 
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: char_xor_x1_05n.cir                                               
+ lic:  
+ lic: FLEXlm: v10.8 
+ lic: USER:   escmc51              HOSTNAME: fas-rla-13.fas.sfu.ca 
+ lic: HOSTID:                      PID:      1161123 
+ lic: Using FLEXlm license file: 
+ lic: 6053@142.58.21.47 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 19-mar-2026/2024.09 
+ lic: 1(in_use)/500(total) FLOATING license(s) on SERVER 142.58.21.47 
+ lic:   
+ Init: read login configuration file: /net/home/escmc51/meta.cfg
+  **reading include file=/CMC/setups/ensc450/HSPICE/libraries/pt_st.inc
+  **reading include file=/CMC/setups/ensc450/HSPICE/libraries/nt_st.inc
+ ****** HSPICE -- D-2010.03-SP2 64-BIT (Aug 26 2010) linux ******               
+ ******  
+ *************************************************
+
+  ******  circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xxor.                           xor_x1             1.00 
+        2 xxor.xpmos1.                    pt_st              1.00 
+        3 xxor.xpmos2.                    pt_st              1.00 
+        4 xxor.xpmos3.                    pt_st              1.00 
+        5 xxor.xpmos4.                    pt_st              1.00 
+        6 xxor.xnmos1.                    nt_st              1.00 
+        7 xxor.xnmos2.                    nt_st              1.00 
+        8 xxor.xnmos3.                    nt_st              1.00 
+        9 xxor.xnmos4.                    nt_st              1.00 
+  **warning** (char_xor_x1_05n.cir:33) Both nodes of element vgnd are connected together; Line ignored.
+  **info** (char_xor_x1_05n.cir:37) DC voltage reset to initial transient source value              in source        0:va                  new dc=  0.0000D+00
+ 
+
+ 
+      
+ **info** set option symb=1 internally to help for convergence.
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2         
+  Opening plot unit= 15
+ file=char_xor_x1_05n.pa0                                                      
+
+
+   *** parameter cload =    1.000E-14 ***
+
+ ******  
+ *************************************************
+
+  ******  transient analysis tnom=  25.000 temp=  25.000 *****
+   tpdf=  2.6428E-10  targ=  5.5143E-09   trig=  5.2500E-09
+   tpdr=  3.3979E-10  targ=  1.1090E-08   trig=  1.0750E-08
+
+          ***** job concluded
+
+   *** parameter cload =    1.500E-14 ***
+
+ ******  
+ *************************************************
+
+  ******  transient analysis tnom=  25.000 temp=  25.000 *****
+   tpdf=  2.8593E-10  targ=  5.5359E-09   trig=  5.2500E-09
+   tpdr=  3.8141E-10  targ=  1.1131E-08   trig=  1.0750E-08
+
+          ***** job concluded
+
+   *** parameter cload =    2.000E-14 ***
+
+ ******  
+ *************************************************
+
+  ******  transient analysis tnom=  25.000 temp=  25.000 *****
+   tpdf=  3.0900E-10  targ=  5.5590E-09   trig=  5.2500E-09
+   tpdr=  4.2331E-10  targ=  1.1173E-08   trig=  1.0750E-08
+
+   meas_variable = tpdf
+   mean  = 286.4039p  varian = 5.000e-22
+   sigma =  22.3612p  avgdev =  15.0618p
+   max   = 308.9966p  min    = 264.2816p
+    1-sigma =  22.3612p median = 264.2816p
+
+   meas_variable = tpdr
+   mean  = 381.5036p  varian = 1.744e-21
+   sigma =  41.7600p  avgdev =  27.8711p
+   max   = 423.3102p  min    = 339.7904p
+    1-sigma =  41.7600p median = 339.7904p
+ 
+
+          ***** job concluded
+ ****** HSPICE -- D-2010.03-SP2 64-BIT (Aug 26 2010) linux ******               
+ ******  
+ *************************************************
+
+  ******  job statistics summary tnom=  25.000 temp=  25.000 *****
+ 
+ 
+ ******  Machine Information  ******
+ CPU:
+ model name	: 13th Gen Intel(R) Core(TM) i5-13500T
+ cpu MHz	: 1600.000
+ 
+ OS:
+ Linux version 4.18.0-553.94.1.el8_10.x86_64 (mockbuild@x64-builder02.almalinux.
+ org) (gcc version 8.5.0 20210514 (Red Hat 8.5.0-28) (GCC)) #1 SMP Mon Jan 19 05
+ :45:41 EST 2026
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count                  :     1
+  Available CPU Count                         :    20
+  Actual Model Evaluation(Load) Threads Count :     1
+  Actual Solver Threads Count                 :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      25 # elements   =      12
+  # resistors   =       0 # capacitors =       1 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       3
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       8 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1          24
+  transient          0.00       60003        1395         492 rev=        75
+  readin             0.00
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           total memory used                215 kbytes
+           total cpu time            0.01 seconds
+           total elapsed time        1.44 seconds
+           job started at     20:09:03 03/01/2026
+           job ended   at     20:09:05 03/01/2026
+
+
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s) 
+real 1.51
+user 0.01
+sys 0.01

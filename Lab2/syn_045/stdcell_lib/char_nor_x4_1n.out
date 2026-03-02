@@ -1,0 +1,191 @@
+Using: /usr/bin/time -p /Lnx_STC/tools/synopsys/hspice_vD-2010.03-SP2/hspice/linux/hspice64  char_nor_x4_1n.cir
+ ****** HSPICE -- D-2010.03-SP2 64-BIT (Aug 26 2010) linux ******               
+  Copyright (C) 2010 Synopsys, Inc. All Rights Reserved.                        
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the 
+  terms and conditions of the license agreement from Synopsys.
+  Use of this program is your acceptance to be bound by the 
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: char_nor_x4_1n.cir                                                
+ lic:  
+ lic: FLEXlm: v10.8 
+ lic: USER:   escmc51              HOSTNAME: fas-rla-13.fas.sfu.ca 
+ lic: HOSTID:                      PID:      1135950 
+ lic: Using FLEXlm license file: 
+ lic: 6053@142.58.21.47 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 19-mar-2026/2024.09 
+ lic: 1(in_use)/500(total) FLOATING license(s) on SERVER 142.58.21.47 
+ lic:   
+ Init: read login configuration file: /net/home/escmc51/meta.cfg
+  **reading include file=/CMC/setups/ensc450/HSPICE/libraries/pt_st.inc
+  **reading include file=/CMC/setups/ensc450/HSPICE/libraries/nt_st.inc
+ ****** HSPICE -- D-2010.03-SP2 64-BIT (Aug 26 2010) linux ******               
+ ******  
+ * ==========================================
+
+  ******  circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xnor.                           nor_x4             1.00 
+        2 xnor.xpmos1.                    pt_st              1.00 
+        3 xnor.xpmos2.                    pt_st              1.00 
+        4 xnor.xnmos1.                    nt_st              1.00 
+        5 xnor.xnmos2.                    nt_st              1.00 
+  **warning** (char_nor_x4_1n.cir:37) Both nodes of element vgnd are connected together; Line ignored.
+  **info** (char_nor_x4_1n.cir:55) DC voltage reset to initial transient source value              in source        0:va                  new dc=  0.0000D+00
+ 
+
+ 
+
+ **warning** the following singular supplies were terminated to 1 meg resistor 
+   supply       node1            node2
+  vgnds                   0:gnds             defined in subckt 0                     0:0                defined in subckt 0               
+  vvdds                   0:vdds             defined in subckt 0                     0:0                defined in subckt 0               
+      
+ **info** set option symb=1 internally to help for convergence.
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2         
+  Opening plot unit= 15
+ file=char_nor_x4_1n.pa0                                                       
+
+
+   *** parameter cload =    2.000E-14 ***
+
+ ******  
+ * ==========================================
+
+  ******  transient analysis tnom=  25.000 temp= 125.000 *****
+   tpdf=  4.4567E-10  targ=  5.9457E-09   trig=  5.5000E-09
+   tpdr=  6.7197E-10  targ=  1.1172E-08   trig=  1.0500E-08
+   leak_pow=  1.1027E-06  from=  1.0000E-09     to=  4.0000E-09
+   dyn_pow=  6.9659E-06  from=  5.0000E-09     to=  8.0000E-09
+
+          ***** job concluded
+
+   *** parameter cload =    4.000E-14 ***
+
+ ******  
+ * ==========================================
+
+  ******  transient analysis tnom=  25.000 temp= 125.000 *****
+   tpdf=  5.4747E-10  targ=  6.0475E-09   trig=  5.5000E-09
+   tpdr=  9.6502E-10  targ=  1.1465E-08   trig=  1.0500E-08
+   leak_pow=  1.1027E-06  from=  1.0000E-09     to=  4.0000E-09
+   dyn_pow=  1.0583E-05  from=  5.0000E-09     to=  8.0000E-09
+
+          ***** job concluded
+
+   *** parameter cload =    6.000E-14 ***
+
+ ******  
+ * ==========================================
+
+  ******  transient analysis tnom=  25.000 temp= 125.000 *****
+   tpdf=  6.4404E-10  targ=  6.1440E-09   trig=  5.5000E-09
+   tpdr=  1.2553E-09  targ=  1.1755E-08   trig=  1.0500E-08
+   leak_pow=  1.1027E-06  from=  1.0000E-09     to=  4.0000E-09
+   dyn_pow=  1.4225E-05  from=  5.0000E-09     to=  8.0000E-09
+
+          ***** job concluded
+
+   *** parameter cload =    8.000E-14 ***
+
+ ******  
+ * ==========================================
+
+  ******  transient analysis tnom=  25.000 temp= 125.000 *****
+   tpdf=  7.4057E-10  targ=  6.2406E-09   trig=  5.5000E-09
+   tpdr=  1.5522E-09  targ=  1.2052E-08   trig=  1.0500E-08
+   leak_pow=  1.1027E-06  from=  1.0000E-09     to=  4.0000E-09
+   dyn_pow=  1.7849E-05  from=  5.0000E-09     to=  8.0000E-09
+
+   meas_variable = tpdf
+   mean  = 594.4350p  varian = 1.605e-20
+   sigma = 126.6928p  avgdev =  97.8679p
+   max   = 740.5697p  min    = 445.6686p
+    1-sigma = 126.6928p median = 595.7509p
+
+   meas_variable = tpdr
+   mean  =   1.1111n  varian = 1.432e-19
+   sigma = 378.3768p  avgdev = 292.6242p
+   max   =   1.5522n  min    = 671.9728p
+    1-sigma = 378.3768p median =   1.1102n
+
+   meas_variable = leak_pow
+   mean  =   1.1027u  varian =   0.     
+   sigma =   0.       avgdev =   0.     
+   max   =   1.1027u  min    =   1.1027u
+    1-sigma =   0.      median =   1.1027u
+
+   meas_variable = dyn_pow
+   mean  =  12.4057u  varian =  21.9502p
+   sigma =   4.6851u  avgdev =   3.6313u
+   max   =  17.8487u  min    =   6.9659u
+    1-sigma =   4.6851u median =  12.4041u
+ 
+
+          ***** job concluded
+ ****** HSPICE -- D-2010.03-SP2 64-BIT (Aug 26 2010) linux ******               
+ ******  
+ * ==========================================
+
+  ******  job statistics summary tnom=  25.000 temp= 125.000 *****
+ 
+ 
+ ******  Machine Information  ******
+ CPU:
+ model name	: 13th Gen Intel(R) Core(TM) i5-13500T
+ cpu MHz	: 1600.000
+ 
+ OS:
+ Linux version 4.18.0-553.94.1.el8_10.x86_64 (mockbuild@x64-builder02.almalinux.
+ org) (gcc version 8.5.0 20210514 (Red Hat 8.5.0-28) (GCC)) #1 SMP Mon Jan 19 05
+ :45:41 EST 2026
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count                  :     1
+  Available CPU Count                         :    20
+  Actual Model Evaluation(Load) Threads Count :     1
+  Actual Solver Threads Count                 :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      16 # elements   =      12
+  # resistors   =       2 # capacitors =       1 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       5
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       4 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1          16
+  transient          0.00        8004         815         360 rev=        21
+  readin             0.00
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           total memory used                205 kbytes
+           total cpu time            0.01 seconds
+           total elapsed time        1.47 seconds
+           job started at     16:49:38 03/01/2026
+           job ended   at     16:49:39 03/01/2026
+
+
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s) 
+real 1.54
+user 0.01
+sys 0.01

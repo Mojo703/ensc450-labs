@@ -1,0 +1,8 @@
+$DATA1 SOURCE='HSPICE' VERSION='D-2010.03-SP2 64-BIT'
+.TITLE '* =========================================='
+ cload            tpdf             leak_pow         dyn_pow           
+                  temper           alter#            
+  1.000e-14        4.815e-10        1.103e-06        3.157e-06        
+                   125.0000        1                 
+  2.000e-14        6.607e-10        1.103e-06        5.022e-06        
+                   125.0000        1                 

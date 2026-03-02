@@ -1,0 +1,85 @@
+* ==========================================
+
+* NOR_X1 LUT Sweep (Ttran = 1ns)
+
+* ==========================================
+
+
+
+.include /CMC/setups/ensc450/HSPICE/cmosp18/rules.inc
+
+.LIB '/CMC/setups/ensc450/HSPICE/cmosp18/log018.l' SS
+
+
+
+.option post
+
+.option method=gear
+
+.option reltol=1e-3
+
+
+
+.include nor_x1.inc
+
+
+
+.param pwr=1.05
+
+.temp 125
+
+
+
+Vvdd  vdd  0   dc pwr
+
+Vvdds vdds 0   dc pwr
+
+Vgnd  gnd  0   dc 0
+
+Vgnds gnds 0   dc 0
+
+
+
+VB b 0 dc 0
+
+
+
+.param Cload=10f
+
+Cload z 0 Cload
+
+
+
+* 1ns transition
+
+VA a 0 PWL(0n 0 5n 0 6n pwr 10n pwr 11n 0 15n 0)
+
+
+
+Xnor a b z vdd vdds gnd gnds NOR_X1
+
+
+
+.tran 10ps 20ns sweep Cload START=10f STOP=20f STEP=10f
+
+
+
+.meas tran tpdf TRIG v(a) val='pwr*0.5' RISE=1
+
++ TARG v(z) val='pwr*0.5' FALL=1
+
+
+
+.meas tran tpdr TRIG v(a) val='pwr*0.5' FALL=1
+
++ TARG v(z) val='pwr*0.5' RISE=1
+
+
+
+.meas tran leak_pow avg power FROM=1ns TO=4ns
+
+.meas tran dyn_pow avg power FROM=5ns TO=8ns
+
+
+
+.end

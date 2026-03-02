@@ -1,0 +1,21 @@
+* "simulator" "HSPICE" 
+* "version" "D-2010.03-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "20:15:46 03/01/2026 "
+* "netlist" "char_xor_x4_05n.cir "
+* "runtitle" "*************************************************"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ a =   0.            
++ b =   0.            
++ vdd =   1.0000        
++ z =   1.0000        
++ xxor.net1 =   1.0000        
++ xxor.net2 =   1.0000        
++ xxor.net3 =  51.1521m       
++ xxor.net4 =  51.1521m       
+***   END: Saved Operating Point ***                     

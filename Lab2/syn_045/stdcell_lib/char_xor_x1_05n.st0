@@ -1,0 +1,77 @@
+***** HSPICE -- D-2010.03-SP2 64-BIT (Aug 26 2010) linux ******
+ Input File: char_xor_x1_05n.cir
+ lic:
+ lic: FLEXlm: v10.8
+ lic: USER:   escmc51              HOSTNAME: fas-rla-13.fas.sfu.ca
+ lic: HOSTID:                      PID:      1161123
+ lic: Using FLEXlm license file:
+ lic: 6053@142.58.21.47
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 19-mar-2026/2024.09
+ lic: 1(in_use)/500(total) FLOATING license(s) on SERVER 142.58.21.47
+ lic:
+ init: begin read circuit files,  cpu clock=  0.00E+00
+       option search   = /CMC/tools/synopsys/hspice_vD-2010.03-SP2/hspice
+       option runlvl
+       option post
+       option method   = gear
+       option reltol   =    1.000E-03
+ init: end read circuit files,  cpu clock=  0.00E+00 memory=       155 kb
+ init: begin check errors,  cpu clock=  0.00E+00
+ init: end check errors,  cpu clock=  0.00E+00 memory=       315 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  0.00E+00
+       establish matrix -- done,  cpu clock=  0.00E+00 memory=       325 kb
+       re-order matrix -- done,  cpu clock=  0.00E+00 memory=       328 kb
+ init: end setup matrix,  cpu clock=  0.00E+00 memory=       346 kb
+ sweep: parameter       parameter1       begin, #sweeps =   3
+ parameter: cload           =    1.00E-14
+ dcop: begin dcop,  cpu clock=  0.00E+00
+ dcop: end dcop,  cpu clock=  0.00E+00 memory=       346 kb  tot_iter=       8
+ output: char_xor_x1_05n.mt0
+ sweep: tran tran1    begin, stop_t=  2.00E-08 #sweeps=**** cpu clock=  0.00E+00
+ tran: time= 2.4318E-09 tot_iter=     118 conv_iter=      41 cpu clock= 0.00E+00
+ tran: time= 4.7438E-09 tot_iter=     127 conv_iter=      44 cpu clock= 0.00E+00
+ tran: time= 6.1793E-09 tot_iter=     245 conv_iter=      85 cpu clock= 0.00E+00
+ tran: time= 8.5830E-09 tot_iter=     253 conv_iter=      89 cpu clock= 0.00E+00
+ tran: time= 1.0500E-08 tot_iter=     257 conv_iter=      91 cpu clock= 0.00E+00
+ tran: time= 1.2127E-08 tot_iter=     347 conv_iter=     123 cpu clock= 0.00E+00
+ tran: time= 1.5000E-08 tot_iter=     355 conv_iter=     127 cpu clock= 0.00E+00
+ tran: time= 1.6124E-08 tot_iter=     437 conv_iter=     153 cpu clock= 0.00E+00
+ tran: time= 1.8432E-08 tot_iter=     455 conv_iter=     159 cpu clock= 0.00E+00
+ tran: time= 2.0000E-08 tot_iter=     461 conv_iter=     161 cpu clock= 0.00E+00
+ sweep: tran tran1    end,  cpu clock=  0.00E+00 memory=       346 kb
+ parameter: cload           =    1.50E-14
+ dcop: begin dcop,  cpu clock=  0.00E+00
+ dcop: end dcop,  cpu clock=  0.00E+00 memory=       346 kb  tot_iter=      16
+ output: char_xor_x1_05n.mt0
+ sweep: tran tran2    begin, stop_t=  2.00E-08 #sweeps=**** cpu clock=  1.00E-02
+ tran: time= 2.2366E-09 tot_iter=     117 conv_iter=      41 cpu clock= 1.00E-02
+ tran: time= 4.3151E-09 tot_iter=     126 conv_iter=      44 cpu clock= 1.00E-02
+ tran: time= 6.0668E-09 tot_iter=     229 conv_iter=      80 cpu clock= 1.00E-02
+ tran: time= 8.8594E-09 tot_iter=     239 conv_iter=      85 cpu clock= 1.00E-02
+ tran: time= 1.0500E-08 tot_iter=     243 conv_iter=      87 cpu clock= 1.00E-02
+ tran: time= 1.2081E-08 tot_iter=     334 conv_iter=     119 cpu clock= 1.00E-02
+ tran: time= 1.4018E-08 tot_iter=     342 conv_iter=     123 cpu clock= 1.00E-02
+ tran: time= 1.6085E-08 tot_iter=     418 conv_iter=     148 cpu clock= 1.00E-02
+ tran: time= 1.8246E-08 tot_iter=     436 conv_iter=     154 cpu clock= 1.00E-02
+ tran: time= 2.0000E-08 tot_iter=     442 conv_iter=     156 cpu clock= 1.00E-02
+ sweep: tran tran2    end,  cpu clock=  1.00E-02 memory=       346 kb
+ parameter: cload           =    2.00E-14
+ dcop: begin dcop,  cpu clock=  1.00E-02
+ dcop: end dcop,  cpu clock=  1.00E-02 memory=       346 kb  tot_iter=      24
+ output: char_xor_x1_05n.mt0
+ sweep: tran tran3    begin, stop_t=  2.00E-08 #sweeps=**** cpu clock=  1.00E-02
+ tran: time= 2.2884E-09 tot_iter=     119 conv_iter=      41 cpu clock= 1.00E-02
+ tran: time= 4.4294E-09 tot_iter=     128 conv_iter=      44 cpu clock= 1.00E-02
+ tran: time= 6.0755E-09 tot_iter=     251 conv_iter=      88 cpu clock= 1.00E-02
+ tran: time= 8.4415E-09 tot_iter=     261 conv_iter=      93 cpu clock= 1.00E-02
+ tran: time= 1.0500E-08 tot_iter=     265 conv_iter=      95 cpu clock= 1.00E-02
+ tran: time= 1.2137E-08 tot_iter=     360 conv_iter=     129 cpu clock= 1.00E-02
+ tran: time= 1.4562E-08 tot_iter=     370 conv_iter=     134 cpu clock= 1.00E-02
+ tran: time= 1.6109E-08 tot_iter=     462 conv_iter=     164 cpu clock= 1.00E-02
+ tran: time= 1.8364E-08 tot_iter=     480 conv_iter=     170 cpu clock= 1.00E-02
+ tran: time= 2.0000E-08 tot_iter=     486 conv_iter=     172 cpu clock= 1.00E-02
+ sweep: tran tran3    end,  cpu clock=  1.00E-02 memory=       346 kb
+ sweep: parameter       parameter       1 end
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

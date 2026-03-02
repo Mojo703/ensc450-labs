@@ -1,0 +1,81 @@
+*************************************************
+
+* XOR_X1 LUT Sweep (Ttran = 1ns)
+
+*************************************************
+
+
+
+.include /CMC/setups/ensc450/HSPICE/cmosp18/rules.inc
+
+.LIB '/CMC/setups/ensc450/HSPICE/cmosp18/log018.l' SS
+
+
+
+.include "xor_x1.inc"
+
+
+
+.option post
+
+.option method=gear
+
+.option reltol=1e-3
+
+
+
+.param cload = 0.01p
+
+
+
+* Power
+
+VVDD vdd 0 1
+
+VGND gnd 0 0
+
+
+
+* Inputs (1ns transition)
+
+VA A 0 PULSE(0 1 5n 1n 1n 5n 10n)
+
+VB B 0 PULSE(0 1 0n 1n 1n 10n 20n)
+
+
+
+* DUT
+
+Xxor A B Z vdd vdd gnd gnd XOR_X1
+
+
+
+* Load sweep 10fF–20fF
+
+Cload Z 0 cload
+
+
+
+.tran 1p 20n sweep cload 0.01p 0.02p 0.005p
+
+
+
+.measure tran tpdf TRIG V(A) VAL=0.5 RISE=1
+
++ TARG V(Z) VAL=0.5 FALL=1
+
+
+
+.measure tran tpdr TRIG V(A) VAL=0.5 FALL=1
+
++ TARG V(Z) VAL=0.5 RISE=1
+
+
+
+.measure tran leak_pow AVG I(VVDD) FROM=1n TO=4n
+
+.measure tran dyn_pow  AVG I(VVDD) FROM=5n TO=8n
+
+
+
+.end
