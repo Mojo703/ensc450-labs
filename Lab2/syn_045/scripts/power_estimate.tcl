@@ -4,11 +4,14 @@
 #
 # VCDs can be SAIF-ied with the command vcd2saif -input file.vcd -output file.vcd.saif -instance /e/uut
 
-set search_path    "/CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB"
+# set search_path    "/CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB"
+set search_path "/ensc/cmc_homedirs/escmc51/ensc450/HSPICE/stdcell_lib"
 
 # Target library is the library that is used by the synthesis tool 
 # in order to map the behavioral RTL logic that is being synthesized
-set target_library "NangateOpenCellLibrary_slow.db"
+# set target_library "NangateOpenCellLibrary_slow.db"
+set target_library "stdcells.db"
+# set target_library "stdcells_x1.db"
 
 # The synthetic library variable specified pre-designed technology independent architectures pre-packaged by Synopsys
 set synthetic_library [list dw_foundation.sldb ]  

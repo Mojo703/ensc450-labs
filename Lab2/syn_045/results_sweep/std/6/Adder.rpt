@@ -1,0 +1,248 @@
+Information: Updating graph... (UID-83)
+Warning: Design 'Adder' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : reference
+Design : Adder
+Version: O-2018.06-SP5
+Date   : Sun Mar  1 19:50:55 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+DFF_X1             NangateOpenCellLibrary
+                                  4.522000    2049   9265.577664  n
+LadnerFischer_N1024           19432.364064       1  19432.364064  h
+-----------------------------------------------------------------------------
+Total 2 references                                  28697.941728
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'Adder' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+        -transition_time
+        -capacitance
+Design : Adder
+Version: O-2018.06-SP5
+Date   : Sun Mar  1 19:50:55 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: A_reg_reg[512]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: S[800] (output port clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Adder              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                          Cap     Trans      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  A_reg_reg[512]/CK (DFF_X1)                              0.00      0.00 #     0.00 r
+  A_reg_reg[512]/Q (DFF_X1)                     3.88      0.04      0.31       0.31 r
+  adder_inst/A[512] (LadnerFischer_N1024)                           0.00       0.31 r
+  adder_inst/U2650/Z (XOR2_X1)                  7.30      0.18      0.29       0.61 r
+  adder_inst/blockgeneration/Prop[512] (LFRecursive_N1024)          0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/Prop[0] (LFRecursive_N512_1)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/Prop[0] (LFRecursive_N256_2)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/Prop[0] (LFRecursive_N128_4)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/Prop[0] (LFRecursive_N64_8)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/Prop[0] (LFRecursive_N32_16)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/Prop[0] (LFRecursive_N16_32)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/Prop[0] (LFRecursive_N8_64)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/Prop[0] (LFRecursive_N4_128)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/Prop[0] (LFRecursive_N2_256)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging2/PLow (Merger_256)
+                                                                    0.00       0.61 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging2/U1/ZN (AND2_X1)
+                                                5.98      0.06      0.20       0.80 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging2/Pout (Merger_256)
+                                                                    0.00       0.80 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/blockProp[1] (LFRecursive_N2_256)
+                                                                    0.00       0.80 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_1/PLow (Merger_769)
+                                                                    0.00       0.80 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_1/U1/ZN (AND2_X1)
+                                                8.76      0.08      0.18       0.98 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_1/Pout (Merger_769)
+                                                                    0.00       0.98 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/blockProp[3] (LFRecursive_N4_128)
+                                                                    0.00       0.98 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_3/PLow (Merger_1283)
+                                                                    0.00       0.98 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_3/U1/ZN (AND2_X1)
+                                               14.37      0.13      0.24       1.22 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_3/Pout (Merger_1283)
+                                                                    0.00       1.22 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/blockProp[7] (LFRecursive_N8_64)
+                                                                    0.00       1.22 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_7/PLow (Merger_1799)
+                                                                    0.00       1.22 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_7/U1/ZN (AND2_X1)
+                                               27.87      0.24      0.37       1.59 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_7/Pout (Merger_1799)
+                                                                    0.00       1.59 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/blockProp[15] (LFRecursive_N16_32)
+                                                                    0.00       1.59 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_15/PLow (Merger_2319)
+                                                                    0.00       1.59 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_15/U1/ZN (AND2_X1)
+                                               57.10      0.47      0.65       2.24 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_15/Pout (Merger_2319)
+                                                                    0.00       2.24 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/bottom_recursive/blockProp[31] (LFRecursive_N32_16)
+                                                                    0.00       2.24 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_31/PLow (Merger_2847)
+                                                                    0.00       2.24 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_31/U1/ZN (AND2_X2)
+                                              113.40      0.47      0.69       2.92 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/merging_31/Pout (Merger_2847)
+                                                                    0.00       2.92 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/bottom_recursive/blockProp[63] (LFRecursive_N64_8)
+                                                                    0.00       2.92 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/merging_63/PLow (Merger_3391)
+                                                                    0.00       2.92 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/merging_63/U1/ZN (AND2_X1)
+                                                2.84      0.05      0.23       3.16 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/merging_63/Pout (Merger_3391)
+                                                                    0.00       3.16 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/bottom_recursive/blockProp[127] (LFRecursive_N128_4)
+                                                                    0.00       3.16 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/U2/Z (CLKBUF_X1)
+                                                4.66      0.05      0.13       3.28 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/U1/Z (CLKBUF_X1)
+                                               21.76      0.19      0.27       3.56 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/merging_127/PLow (Merger_3967)
+                                                                    0.00       3.56 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/merging_127/U1/ZN (AND2_X1)
+                                                2.84      0.04      0.18       3.73 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/merging_127/Pout (Merger_3967)
+                                                                    0.00       3.73 r
+  adder_inst/blockgeneration/top_recursive/bottom_recursive/blockProp[255] (LFRecursive_N256_2)
+                                                                    0.00       3.73 r
+  adder_inst/blockgeneration/top_recursive/U2/Z (CLKBUF_X1)
+                                                7.78      0.07      0.15       3.88 r
+  adder_inst/blockgeneration/top_recursive/U30/Z (CLKBUF_X1)
+                                               36.02      0.30      0.41       4.29 r
+  adder_inst/blockgeneration/top_recursive/merging_31/PLow (Merger_4383)
+                                                                    0.00       4.29 r
+  adder_inst/blockgeneration/top_recursive/merging_31/U1/ZN (AND2_X1)
+                                                3.25      0.05      0.21       4.50 r
+  adder_inst/blockgeneration/top_recursive/merging_31/Pout (Merger_4383)
+                                                                    0.00       4.50 r
+  adder_inst/blockgeneration/top_recursive/blockProp[287] (LFRecursive_N512_1)
+                                                                    0.00       4.50 r
+  adder_inst/blockgeneration/merging_287/PHi (Merger_4895)          0.00       4.50 r
+  adder_inst/blockgeneration/merging_287/U3/ZN (AOI21_X1)
+                                                1.79      0.06      0.06       4.56 f
+  adder_inst/blockgeneration/merging_287/U2/ZN (INV_X1)
+                                                1.88      0.03      0.07       4.63 r
+  adder_inst/blockgeneration/merging_287/Gout (Merger_4895)         0.00       4.63 r
+  adder_inst/blockgeneration/blockGen[799] (LFRecursive_N1024)      0.00       4.63 r
+  adder_inst/U1689/ZN (AOI21_X1)                2.61      0.05      0.05       4.68 f
+  adder_inst/U1688/ZN (XNOR2_X1)                5.31      0.14      0.22       4.90 r
+  adder_inst/S[800] (LadnerFischer_N1024)                           0.00       4.90 r
+  S[800] (out)                                            0.14      0.03       4.93 r
+  data arrival time                                                            4.93
+
+  clock CLK (rise edge)                                             6.00       6.00
+  clock network delay (ideal)                                       0.00       6.00
+  output external delay                                            -0.80       5.20
+  data required time                                                           5.20
+  ------------------------------------------------------------------------------------
+  data required time                                                           5.20
+  data arrival time                                                           -4.93
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.27
+
+
+1
+Loading db file '/CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB/NangateOpenCellLibrary_slow.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : Adder
+Version: O-2018.06-SP5
+Date   : Sun Mar  1 19:50:56 2026
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB/NangateOpenCellLibrary_slow.db)
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+Adder                  5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   1.7770 mW   (71%)
+  Net Switching Power  = 712.8452 uW   (29%)
+                         ---------
+Total Dynamic Power    =   2.4898 mW  (100%)
+
+Cell Leakage Power     = 387.9328 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       1.1688e+03           57.5405        1.1168e+05        1.3381e+03  (  46.50%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    608.1617          655.3014        2.7626e+05        1.5397e+03  (  53.50%)
+--------------------------------------------------------------------------------------------------
+Total          1.7770e+03 uW       712.8419 uW     3.8793e+05 nW     2.8778e+03 uW
+1

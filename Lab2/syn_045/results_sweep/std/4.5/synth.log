@@ -1,0 +1,248 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP5 for linux64 - Jan 17, 2019 
+
+                    Copyright (c) 1988 - 2019 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Running PRESTO HDLC
+Compiling Entity Declaration MERGER
+Compiling Architecture BEHAVIORAL of MERGER
+Warning:  ../vhdl/Merger.vhd:11: The architecture Behavioral has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Loading db file '/CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB/NangateOpenCellLibrary_slow.db'
+Loading db file '/CMC/tools/synopsys/syn_vO-2018.06-SP5/libraries/syn/dw_foundation.sldb'
+Running PRESTO HDLC
+Compiling Entity Declaration LFRECURSIVE
+Compiling Architecture BEHAVIORAL of LFRECURSIVE
+Warning:  ../vhdl/LFRecursive.vhd:12: The architecture behavioral has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration LADNERFISCHER
+Compiling Architecture BEHAVIORAL of LADNERFISCHER
+Warning:  ../vhdl/LadnerFischer.vhd:15: The architecture behavioral has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration ADDER
+Compiling Architecture RTL of ADDER
+Warning:  ../vhdl/Adder.vhd:14: The architecture RTL has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Loading db file '/CMC/tools/synopsys/syn_vO-2018.06-SP5/libraries/syn/gtech.db'
+Loading db file '/CMC/tools/synopsys/syn_vO-2018.06-SP5/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'Merger'.
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'LFRecursive'.
+Information: Building the design 'LFRecursive' instantiated from design 'LFRecursive' with
+	the parameters "N=2". (HDL-193)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Warning:  ../vhdl/LadnerFischer.vhd:24: Real types with ranges are not supported and will be ignored. (ELAB-1002)
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'LadnerFischer'.
+Information: Building the design 'LFRecursive' instantiated from design 'LadnerFischer' with
+	the parameters "N=1024". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'LFRecursive' instantiated from design 'LFRecursive_N1024' with
+	the parameters "N=512". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'LFRecursive' instantiated from design 'LFRecursive_N512' with
+	the parameters "N=256". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'LFRecursive' instantiated from design 'LFRecursive_N256' with
+	the parameters "N=128". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'LFRecursive' instantiated from design 'LFRecursive_N128' with
+	the parameters "N=64". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'LFRecursive' instantiated from design 'LFRecursive_N64' with
+	the parameters "N=32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'LFRecursive' instantiated from design 'LFRecursive_N32' with
+	the parameters "N=16". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'LFRecursive' instantiated from design 'LFRecursive_N16' with
+	the parameters "N=8". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'LFRecursive' instantiated from design 'LFRecursive_N8' with
+	the parameters "N=4". (HDL-193)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine Adder line 31 in file
+		'../vhdl/Adder.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      A_reg_reg      | Flip-flop | 1024  |  Y  | N  | N  | N  | N  | N  | N  |
+|      B_reg_reg      | Flip-flop | 1024  |  Y  | N  | N  | N  | N  | N  | N  |
+|     Cin_reg_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'Adder'.
+Information: Building the design 'LadnerFischer' instantiated from design 'Adder' with
+	the parameters "N=1024". (HDL-193)
+Warning:  ../vhdl/LadnerFischer.vhd:24: Real types with ranges are not supported and will be ignored. (ELAB-1002)
+Presto compilation completed successfully.
+Current design is 'Adder'.
+
+  Linking design 'Adder'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  NangateOpenCellLibrary (library) /CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB/NangateOpenCellLibrary_slow.db
+  dw_foundation.sldb (library) /CMC/tools/synopsys/syn_vO-2018.06-SP5/libraries/syn/dw_foundation.sldb
+
+Information: Uniquified 5120 instances of design 'Merger'. (OPT-1056)
+Information: Uniquified 2 instances of design 'LFRecursive_N512'. (OPT-1056)
+Information: Uniquified 4 instances of design 'LFRecursive_N256'. (OPT-1056)
+Information: Uniquified 8 instances of design 'LFRecursive_N128'. (OPT-1056)
+Information: Uniquified 16 instances of design 'LFRecursive_N64'. (OPT-1056)
+Information: Uniquified 32 instances of design 'LFRecursive_N32'. (OPT-1056)
+Information: Uniquified 64 instances of design 'LFRecursive_N16'. (OPT-1056)
+Information: Uniquified 128 instances of design 'LFRecursive_N8'. (OPT-1056)
+Information: Uniquified 256 instances of design 'LFRecursive_N4'. (OPT-1056)
+Information: Uniquified 512 instances of design 'LFRecursive_N2'. (OPT-1056)
+Current design is 'Adder'.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.5 |     *     |
+| Licensed DW Building Blocks        | O-2018.06-DWBB_201806.5 |           |
+============================================================================
+
+
+Information: There are 1024 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+  Processing 'Merger_4608'
+  Processing 'LadnerFischer_N1024'
+  Processing 'Adder'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:08   28334.6     21.89   18497.3   12104.4                          
+    0:00:10   28447.9     21.33   13779.9    7841.7                          
+    0:00:10   28465.5     21.33   13779.9    7445.3                          
+    0:00:10   28524.0     10.70    8410.4    5721.4                          
+    0:00:10   28546.9      9.86    5624.8    5072.6                          
+    0:00:10   28570.5      9.86    4782.4    4416.9                          
+    0:00:10   28604.0      4.88    3481.2    3599.9                          
+    0:00:10   28626.1      4.81    3479.9    3174.0                          
+    0:00:10   28649.0      3.52    2646.6    2658.9                          
+    0:00:11   28741.3      1.06     632.3    1490.2 S[717]                   
+    0:00:11   28766.6      0.71     428.4    1412.7 S[542]                   
+    0:00:12   28818.2      0.46     224.1    1158.5 S[879]                   
+    0:00:12   28836.3      0.43     196.0    1141.9 S[528]                   
+    0:00:12   28842.1      0.41     188.5    1141.9 S[650]                   
+    0:00:12   28842.1      0.41     189.1    1141.9 S[644]                   
+    0:00:12   28842.1      0.41     189.0    1141.9 S[636]                   
+    0:00:12   28842.1      0.41     188.8    1141.9 S[627]                   
+    0:00:12   28842.1      0.41     188.7    1141.9 S[618]                   
+    0:00:12   28842.1      0.41     188.6    1141.9 S[609]                   
+    0:00:13   28842.1      0.41     188.4    1141.9 S[600]                   
+    0:00:13   28844.2      0.41     188.0    1141.9 S[843]                   
+    0:00:13   28844.2      0.41     187.9    1141.9 S[836]                   
+    0:00:13   28845.3      0.39     185.6    1141.9 S[651]                   
+    0:00:13   28860.2      0.34     158.6    1102.6 S[722]                   
+    0:00:13   28862.3      0.34     160.1    1102.6 S[789]                   
+    0:00:13   28862.3      0.34     160.0    1102.6 S[571]                   
+    0:00:13   28862.1      0.33     159.6    1102.6 S[567]                   
+    0:00:13   28861.3      0.33     159.3    1102.6 S[960]                   
+    0:00:13   28864.7      0.32     157.3    1102.6 S[1009]                  
+    0:00:14   28864.5      0.32     157.1    1102.6 S[722]                   
+    0:00:14   28864.5      0.32     156.9    1102.6 S[798]                   
+    0:00:14   28869.2      0.31     154.0    1102.6 S[687]                   
+    0:00:14   28873.0      0.31     153.8    1102.6 Ovfl                     
+    0:00:14   28887.3      0.31     153.4    1102.6 S[724]                   
+    0:00:14   28897.7      0.31     153.2    1102.6 S[1008]                  
+    0:00:14   28902.0      0.31     153.0    1102.6 S[761]                   
+    0:00:14   28902.0      0.31     152.8    1102.6 S[752]                   
+    0:00:14   28902.0      0.31     152.6    1102.6 S[744]                   
+    0:00:14   28902.0      0.31     152.5    1102.6 S[736]                   
+    0:00:14   28902.0      0.31     152.3    1102.6 S[727]                   
+    0:00:14   28919.0      0.31     152.1    1102.6 S[773]                   
+    0:00:14   28925.9      0.30     152.2    1102.6 S[901]                   
+    0:00:14   28926.7      0.30     151.0    1102.6 S[867]                   
+    0:00:14   28926.7      0.30     150.9    1102.6 S[822]                   
+    0:00:15   28927.5      0.30     150.7    1102.6 S[708]                   
+    0:00:15   28933.4      0.30     150.2    1102.6 S[525]                   
+    0:00:15   28942.9      0.30     150.0    1102.6 S[682]                   
+    0:00:15   28943.7      0.30     149.8    1102.6 Ovfl                     
+    0:00:15   28944.0      0.30     144.9    1102.6 S[769]                   
+    0:00:15   28988.7      0.18      86.6    1069.3 S[766]                   
+    0:00:16   28996.4      0.14      53.3    1069.3 S[772]                   
+    0:00:16   29005.7      0.09      38.8    1069.3 S[973]                   
+    0:00:16   29024.1      0.03      10.6    1069.3 S[766]                   
+    0:00:16   29029.1      0.01       1.7    1069.3 S[952]                   
+    0:00:17   29029.6      0.01       0.9    1069.3 S[952]                   
+    0:00:17   29029.9      0.00       0.0    1069.3 S[765]                   
+    0:00:17   29032.0      0.00      -0.0    1069.3                          
+    0:00:17   29032.0      0.00      -0.0    1069.3                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:17   29032.0      0.00      -0.0    1069.3                          
+    0:00:21   29032.6      0.00      -0.0    1024.5                          
+Loading db file '/CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB/NangateOpenCellLibrary_slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'Adder' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 2049 load(s), 1 driver(s)
+Writing ddc file './results/Adder.ddc'.
+Writing verilog file '/ensc/cmc_homedirs/escmc51/ensc450/ensc450-labs/Lab2/syn_045/results/Adder.ref.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+
+Thank you...

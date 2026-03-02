@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP5 for linux64 -- Jan 17, 2019
-#@ # Date:   Sat Feb 28 18:11:46 2026
+#@ # Date:   Sun Mar  1 21:14:43 2026
 #@ # Run by: escmc51@fas-rla-06.fas.sfu.ca
 #@ 
 
@@ -6641,11 +6641,14 @@ source -echo -verbose /ensc/cmc_homedirs/escmc51/ensc450/ensc450-labs/Lab2/syn_0
 #@ #
 #@ # VCDs can be SAIF-ied with the command vcd2saif -input file.vcd -output file.vcd.saif -instance /e/uut
 #@ 
-#@ set search_path    "/CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB"
+#@ # set search_path    "/CMC/setups/ensc450/SOCLAB/LIBRARIES/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/DB"
+#@ set search_path "/ensc/cmc_homedirs/escmc51/ensc450/HSPICE/stdcell_lib"
 #@ 
 #@ # Target library is the library that is used by the synthesis tool 
 #@ # in order to map the behavioral RTL logic that is being synthesized
-#@ set target_library "NangateOpenCellLibrary_slow.db"
+#@ # set target_library "NangateOpenCellLibrary_slow.db"
+#@ set target_library "stdcells.db"
+#@ # set target_library "stdcells_x1.db"
 #@ 
 #@ # The synthetic library variable specified pre-designed technology independent architectures pre-packaged by Synopsys
 #@ set synthetic_library [list dw_foundation.sldb ]  

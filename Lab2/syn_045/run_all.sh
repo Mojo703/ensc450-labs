@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # List of clock periods in ns
-PERIODS=("10" "9" "8" "7" "6" "5.5" "5" "4.5" "4")
+# PERIODS=("60" "40" "30" "20" "10" "9" "8" "7" "6" "5.5" "5" "4.5" "4")
+PERIODS=("20" "15" "10")
 
 BASE_RESULT_DIR="results_sweep"
 mkdir -p "$BASE_RESULT_DIR"
